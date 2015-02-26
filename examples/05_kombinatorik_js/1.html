@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+</head>
+<body style="margin: 0px; padding: 0px">
+
+  <svg id="canvas" width="600px" height="600px">
+    <polygon id="modul" points="0,0 120,0 170,80 120,20"/>
+  </svg>
+
+
+  <script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    var modul = document.getElementById('modul');
+
+    for (var i = 0; i < 24; i++) {
+      // Es sollte einen eleganteren Weg geben, wie man zwischen Original und Kopie unterscheidet.
+      // Außerdem hat jetzt jedes Polygon die gleich id. Nicht gut, oder?
+      var modulCopy = modul.cloneNode();
+      canvas.appendChild(modulCopy);
+
+      // nicht so schön, die Strings selbst zusammensetzen zu müssen:
+      modulCopy.setAttribute("transform", "translate(300, 300) rotate("+i*15+")");
+    };
+
+    // das Original muss entweder mitverwendet werden oder unsichtbar werden. Gibt es da eine bessere Lösung?
+    modul.setAttribute("display", "none");
+
+  </script>
+
+</body>
+</html>

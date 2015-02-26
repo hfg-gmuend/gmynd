@@ -1,0 +1,6 @@
+Beschreiben von Animation durch Code.
+Verstehen der unterschiedlichen Möglichkeiten, Parameter von Animation.
+Semantische Übung: Darstellen von Begriffen durch Animation.
+
+Achtung:
+Easing bei SVG-Animationen ist extrem unübersichtlich. Entweder wir stellen zusätzliche Funktionen zur Verfügung, oder die Animationen laufen über CSS oder JS.

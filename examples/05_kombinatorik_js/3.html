@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+</head>
+<body style="margin: 0px; padding: 0px">
+
+  <svg id="canvas" width="600px" height="600px">
+    <polygon id="modul" points="0,0 120,0 170,80 120,20"/>
+  </svg>
+
+
+  <script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    var modul = document.getElementById('modul');
+
+    for (var i = 0; i < 12; i++) {
+      var modulCopy = modul.cloneNode();
+      canvas.appendChild(modulCopy);
+
+      modulCopy.setAttribute("transform", "translate("+(100+i*20)+", 300) rotate("+(90+i*180)+")");
+    };
+
+    modul.setAttribute("display", "none");
+
+  </script>
+
+</body>
+</html>
