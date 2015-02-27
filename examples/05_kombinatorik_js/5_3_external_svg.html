@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+</head>
+<body style="margin: 0px; padding: 0px">
+
+  <object id="svg1" data="./modul.svg" type="image/svg+xml"></object>
+
+  <script type="text/javascript">
+    
+    // geht das Handling mit externen SVGs auch irgendwie einfacher?
+
+    document.getElementById("svg1").addEventListener("load", function() {
+      var doc = this.getSVGDocument();
+      //var rect = doc.querySelector("rect"); 
+    
+      var canvas = doc.getElementById('canvas');
+      var modul = doc.getElementById('modul');
+
+      for (var i = 0; i < 109; i++) {
+        var modulCopy = modul.cloneNode();
+        canvas.appendChild(modulCopy);
+
+        modulCopy.setAttribute("transform", "translate(300, 300) rotate("+(i*10)+") translate("+(i*1.6)+", 0) scale(0.5) ");
+      };
+
+    });
+
+
+  </script>
+
+</body>
+</html>

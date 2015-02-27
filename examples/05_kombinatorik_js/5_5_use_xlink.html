@@ -5,14 +5,13 @@
 </head>
 <body style="margin: 0px; padding: 0px">
 
-  <svg width="600px" height="600px">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px" height="600px" viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
 
     <g id="symbole" display="none">
       <polygon id="modul" points="0,0 120,0 170,80 120,20  "/>
     </g>
     
     <g id="canvas">
-      <use xlink:href="#modul" transform="rotate(10)"/>
     </g>
   
   </svg>
@@ -20,17 +19,18 @@
 
   <script type="text/javascript">
     var canvas = document.getElementById('canvas');
-    var modul = document.getElementById('modul');
-
+    
     for (var i = 0; i < 109; i++) {
-      var newModule = document.createElement("use");
-      
+
+      // warum sehe ich nichts, wenn ich die Elemente als Link erzeuge?
+      var newModule = document.createElementNS('http://www.w3.org/2000/svg', "use");
+    
+      canvas.appendChild(newModule);
+
       newModule.setAttribute("xlink:href", "#modul");
       newModule.setAttribute("transform", "translate(300, 300) rotate("+(i*10)+") translate("+(i*1.6)+", 0) scale(0.5) ");
- 
-      canvas.appendChild(newModule);
-   };
 
+   };
   </script>
 
 </body>
