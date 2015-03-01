@@ -17,10 +17,10 @@
 <script type="text/javascript">
   var circles = [];
   for (var i=0; i<10; i++) {
-    circles[i] = createNode('circle', {cx:i*50+75, cy:300, r:25, fill:gray(100)});
+    circles[i] = createNode('circle', {cx:i*50+75, cy:300, r:25, fill:gray(randomInt(0, 255))});
   }
 
-  var anim = function() {
+  var anim = function(f) {
     circles.forEach(function(circle) {
       var x = circle.getAttribute('cx');
       var y = circle.getAttribute('cy');
