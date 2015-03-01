@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GMYND test</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../lib/gmynd_base.css">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"></svg>
+
+<div>
+  Titel der Arbeit
+</div>
+
+<script src="../lib/gmynd.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var circles = [];
+  for (var i=0; i<10; i++) {
+    circles[i] = createNode('circle', {cx:i*50+75, cy:300, r:25});
+  }
+
+  var anim = function() {
+    circles.forEach(function(circle) {
+      var x = circle.getAttribute('cx');
+      var y = circle.getAttribute('cy');
+      if (x > Mouse.x-25 && x < Mouse.x+25) {
+        y--;
+      } else if (y < 300) {
+        y++;
+      }
+      circle.setAttribute('cy', y);
+    });
+  }
+  animate(anim);
+</script>
+
+</body>
+</html>
