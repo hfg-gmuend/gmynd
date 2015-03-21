@@ -19,15 +19,11 @@
   var elements = [];
   var group = createNode('g');
   var i = 0;
-  for (var y=0; y<=2; y++) {
-    for (var x=0; x<=2; x++) {
-      console.log
-      elements[i] = createNode('rect', {x:x*56.5+50, y:y*56.5+50, width:40, height:40}, false);
+  var step = 50;
+  for (var y=0; y<=8; y++) {
+    for (var x=0; x<=8; x++) {
+      elements[i] = createNode('rect', {x:x*step+100, y:y*step+100, width:40, height:40}, false);
       group.appendChild(elements[i]);
-
-      //var transforms = getTransforms(elements[i]);
-      //console.log(transforms);
-
       i++;
     }
   }
@@ -40,10 +36,18 @@
       if (i%2 == 1) {
         angle = -angle;
       }
+      var a = (angle-45)/180*Math.PI;
+      var c1 = Math.abs(Math.cos( a ));
+      var c2 = Math.abs(Math.sin( a ));
+      var c = Math.max(c1, c2);
+      var s = (step/2 / c) / Math.sqrt(2);
 
-      clearTransforms(element);
+      element.setAttribute('width', s*2);
+      element.setAttribute('height', s*2);
+      // HB_Comment: clearTransforms would be necessary, if the order of the transforms should change at some point. 
+      //clearTransforms(element);
       rotate_EXP(element, angle, cx, cy);
-      translate_EXP(element, -20, -20);
+      translate_EXP(element, -s, -s);
       
     });
   }
