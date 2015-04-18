@@ -18,7 +18,7 @@
   var circles = [];
   var group = createNode('g', {transform:'rotate(25.5)'});
   for (var i=0; i<10; i++) {
-    circles[i] = createNode('circle', {cx:i*50+75, cy:300, r:25, fill:gray(randomInt(0, 255))}, false);
+    circles[i] = createNode('circle', {cx:i*50+75, cy:300, r:25, fill:gray(randomInt(0, 255))}, true);
     group.appendChild(circles[i]);
   }
 
