@@ -18,7 +18,7 @@
 - [`getTransform(element)`](docs/getTransform.md)
 - [`transformFromString(str)`](docs/transformFromString.md)
 
-##### `Mouse` 
+##### Mouse 
 - [`Mouse`](docs/Mouse.md)
 
 ##### Animation 
