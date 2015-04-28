@@ -4,52 +4,52 @@
 
 ## Reference
 
-### NODE CREATION AND MANIPULATION 
+#### NODE CREATION AND MANIPULATION 
 
-#### createNode(nodeName, attributes, draw) ####
+##### createNode(nodeName, attributes, draw) ####
 
-#### createInstance(sourceElement, attributes, draw) 
+##### createInstance(sourceElement, attributes, draw) 
 
-#### setAttributes(element, attributes) 
+##### setAttributes(element, attributes) 
 
-### TRANSFORM 
+#### TRANSFORM 
 
-#### setTransform(element, transforms) 
+##### setTransform(element, transforms) 
 Replace all transforms on an object with new transforms
 
-#### appendTransform(element, transforms) 
+##### appendTransform(element, transforms) 
 Add one or more transforms to an object that already has transforms
 
-#### clearTransform(element) 
+##### clearTransform(element) 
 Removes all transforms from an element
 
-#### getTransform(element) 
+##### getTransform(element) 
 Converts the transform string of the given element to an array of objects 
 
-#### transformFromString(str) 
+##### transformFromString(str) 
 Convert a transform string into an array of transform objects
 
-### MOUSE 
+#### MOUSE 
 
 var Mouse = {x:0, y:0, button:-1};
 
-### ANIMATION 
+#### ANIMATION 
 
-#### animate(fn, fps) 
+##### animate(fn, fps) 
 
-### MATH 
+#### MATH 
 
-#### random(low, high) 
+##### random(low, high) 
 
-#### randomInt(low, high) 
+##### randomInt(low, high) 
 
-### COLOR 
+#### COLOR 
 
-#### gray(grayValue, alpha) 
+##### gray(grayValue, alpha) 
 
-#### rgb(red, green, blue, alpha) 
+##### rgb(red, green, blue, alpha) 
 
-#### hsl(hue, saturation, brightness, alpha) 
+##### hsl(hue, saturation, brightness, alpha) 
 
 
 Suggestions? Bugs? File an issue! :)
