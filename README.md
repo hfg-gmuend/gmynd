@@ -6,6 +6,7 @@
 
 #### Node creation and manipulation
 
+---------------------------------
 ##### createNode(nodeName, attributes, draw)
 Creates a node.
 
@@ -26,7 +27,7 @@ var c = createNode('circle', {cx:100, cy:200, r:80, transform:'scale(1.3)'}, fal
 myNewGroup.appendChild(c);
 ```
 
-
+---------------------------------
 ##### createInstance(sourceElement, attributes, draw) 
 Creates an instance of an element (`<use xlink:href="#someID" />`) that is defined in the defs of the SVG. 
 
@@ -48,6 +49,7 @@ defs.appendChild(elem);
 createInstance(elem, {x:200, y:200});
 ```
 
+---------------------------------
 ##### setAttributes(element, attributes) 
 Sets the attributes of a given element.
 
@@ -67,44 +69,65 @@ setAttributes(elem, {transform:'rotate(30)'});
 ```
 
 
+---------------------------------
 #### Transforms 
 
+---------------------------------
 ##### setTransform(element, transforms) 
 Replace all transforms on an object with new transforms
 
+---------------------------------
 ##### appendTransform(element, transforms) 
 Add one or more transforms to an object that already has transforms
 
+---------------------------------
 ##### clearTransform(element) 
 Removes all transforms from an element
 
+---------------------------------
 ##### getTransform(element) 
 Converts the transform string of the given element to an array of objects 
 
+---------------------------------
 ##### transformFromString(str) 
 Convert a transform string into an array of transform objects
 
+
+---------------------------------
 #### Mouse 
 
 var Mouse = {x:0, y:0, button:-1};
 
+
+---------------------------------
 #### Animation 
 
+---------------------------------
 ##### animate(function, fps) 
 
+
+---------------------------------
 #### Math 
 
+---------------------------------
 ##### random(low, high) 
 
+---------------------------------
 ##### randomInt(low, high) 
 
+
+---------------------------------
 #### Color 
 
+---------------------------------
 ##### gray(grayValue, alpha) 
 
+---------------------------------
 ##### rgb(red, green, blue, alpha) 
 
+---------------------------------
 ##### hsl(hue, saturation, brightness, alpha) 
 
 
+---------------------------------
 Suggestions? Bugs? File an issue! :)
