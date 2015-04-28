@@ -27,7 +27,7 @@ var c = createNode('circle', {cx:100, cy:200, r:80, transform:'scale(1.3)'}, fal
 myNewGroup.appendChild(c);
 ```
 
-- [createNode(nodeName, attributes, draw)](docs/createNode.md)
+- [`createNode(nodeName, attributes, draw)`](docs/createNode.md)
 
 
 ---------------------------------
