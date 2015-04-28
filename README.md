@@ -27,6 +27,9 @@ var c = createNode('circle', {cx:100, cy:200, r:80, transform:'scale(1.3)'}, fal
 myNewGroup.appendChild(c);
 ```
 
+- [createNode(nodeName, attributes, draw)](docs/createNode.md)
+
+
 ---------------------------------
 ##### `createInstance(sourceElement, attributes, draw)` 
 Creates an instance of an element (`<use xlink:href="#someID" />`) that is defined in the defs of the SVG. 
