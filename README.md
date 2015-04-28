@@ -7,7 +7,7 @@
 #### Node creation and manipulation
 
 ---------------------------------
-##### createNode(nodeName, attributes, draw)
+##### `createNode(nodeName, attributes, draw)`
 Creates a node.
 
 Arguments:
@@ -93,7 +93,7 @@ setTransform(elem, 'translate(40 70) rotate(30)');
 or
 ```javascript
 var elem = createNode('rect', {width:100, height:100});
-setTransform(elem, [{type:'translate', values:[100, 50]}, {type:'rotate', values:[30]}]);
+setTransform(elem, [{type:'translate', values:[40, 70]}, {type:'rotate', values:[30]}]);
 ```
 
 
