@@ -185,23 +185,90 @@ animate(myAnimationFunction);
 #### Math 
 
 ---------------------------------
-##### random(low, high) 
+##### random(low, high)
+Returns a random number between `low` and `high`.  
+
+Example:
+
+Get a random number between 20 and 50. The result will be something like `38.519687323693304`.
+```javascript
+var n = random(20, 50);
+```
 
 ---------------------------------
 ##### randomInt(low, high) 
+Returns a random integer number between `low` and `high`. 
 
+Example:
+
+Get a random integer number between 2 and 4. The result will be `2`, `3` or `4`.
+```javascript
+var n = randomInt(2, 4);
+```
 
 ---------------------------------
 #### Color 
 
 ---------------------------------
-##### gray(grayValue, alpha) 
+##### gray(grayValue, alpha)
+Returns a string representing the given gray color. This string could be used for any color attribute.
+
+Arguments:
+- grayValue: A number between 0 and 255.
+- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+
+Returns:
+- A string representing the given color.
+
+Example:
+
+This example creates a circle and sets the color to a middle gray.
+```javascript
+var col = gray(128);
+createNode('circle', {cx:300, cy:300, r:100, fill:col});
+```
 
 ---------------------------------
 ##### rgb(red, green, blue, alpha) 
+Returns a string representing the given rgb color. This string could be used for any color attribute.
+
+Arguments:
+- red: A number between 0 and 255.
+- green: A number between 0 and 255.
+- blue: A number between 0 and 255.
+- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+
+Returns:
+- A string representing the given color.
+
+Example:
+
+This example creates a semi-transparent orange circle.
+```javascript
+var col = rgb(240, 175, 30, 0.5);
+createNode('circle', {cx:300, cy:300, r:100, fill:col});
+```
 
 ---------------------------------
-##### hsl(hue, saturation, brightness, alpha) 
+##### hsl(hue, saturation, lightness, alpha) 
+Returns a string representing the given hsl color. This string could be used for any color attribute.
+
+Arguments:
+- hue: A number between 0 and 360.
+- saturation: A number between 0 and 1.
+- lightness: A number between 0 and 1.
+- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+
+Returns:
+- A string representing the given color.
+
+Example:
+
+This example creates a light blue circle.
+```javascript
+var col = hsl(200, 1, 0.8);
+createNode('circle', {cx:300, cy:300, r:100, fill:col});
+```
 
 
 ---------------------------------
