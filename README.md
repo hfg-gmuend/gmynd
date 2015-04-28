@@ -7,11 +7,12 @@
 #### Node creation and manipulation
 
 ##### createNode(nodeName, attributes, draw)
-Creates a node
+Creates a node.
+
 Arguments:
-- nodeName: The name of the node as a String, e.g. ´´´circle´´´
-- attributes (optional): An object giving the attribute names and values, e.g. ´´´{cx:100, cy:200, r:80, transform:"rotate(30)"}´´´
-- draw (optional): When ´´´true´´´, the new node will be automatically added to the first SVG element in the HTML document. When ´´´false´´´, you should store the new element in a variable and you need to add it to the document using ´´´appendChild()´´´. Default is ´´´true´´´.
+- nodeName: The name of the node as a String, e.g. `circle`
+- attributes (optional): An object giving the attribute names and values, e.g. `{cx:100, cy:200, r:80, transform:"rotate(30)"}`
+- draw (optional): When `true`, the new node will be automatically added to the first SVG element in the HTML document. When `false`, you should store the new element in a variable and you need to add it to the document using `appendChild()`. Default is `true`.
 
 ##### createInstance(sourceElement, attributes, draw) 
 
