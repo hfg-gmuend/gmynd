@@ -11,9 +11,9 @@
 Creates a node.
 
 Arguments:
-- nodeName: The name of the node as a string, e.g. `'circle'`
-- attributes (optional): An object giving the attribute names and values, e.g. `{cx:100, cy:200, r:80, transform:'scale(1.3)'}`
-- draw (optional): When `true`, the new node will be automatically added to the SVG element in the HTML document. When `false`, you should store the new element in a variable and you need to add it to the document using `appendChild()`. Default is `true`.
+- `nodeName`: The name of the node as a string, e.g. `'circle'`
+- `attributes` (optional): An object giving the attribute names and values, e.g. `{cx:100, cy:200, r:80, transform:'scale(1.3)'}`
+- `draw` (optional): When `true`, the new node will be automatically added to the SVG element in the HTML document. When `false`, you should store the new element in a variable and you need to add it to the document using `appendChild()`. Default is `true`.
 
 Returns:
 - The new node as an HTML element.
@@ -28,13 +28,13 @@ myNewGroup.appendChild(c);
 ```
 
 ---------------------------------
-##### createInstance(sourceElement, attributes, draw) 
+##### `createInstance(sourceElement, attributes, draw)` 
 Creates an instance of an element (`<use xlink:href="#someID" />`) that is defined in the defs of the SVG. 
 
 Arguments:
-- sourceElement: The source element or its id as a string.
-- attributes (optional): An object giving the attribute names and values, e.g. `{x:200, y:200}`
-- draw (optional): When `true`, the new node will be automatically added to the SVG element in the HTML document. When `false`, you should store the new element in a variable and you need to add it to the document using `appendChild()`. Default is `true`.
+- `sourceElement`: The source element or its id as a string.
+- `attributes` (optional): An object giving the attribute names and values, e.g. `{x:200, y:200}`
+- `draw` (optional): When `true`, the new node will be automatically added to the SVG element in the HTML document. When `false`, you should store the new element in a variable and you need to add it to the document using `appendChild()`. Default is `true`.
 
 Returns:
 - The new node as an HTML element.
@@ -50,12 +50,12 @@ createInstance(elem, {x:200, y:200});
 ```
 
 ---------------------------------
-##### setAttributes(element, attributes) 
+##### `setAttributes(element, attributes)` 
 Sets the attributes of a given element.
 
 Arguments:
-- element: The element whose attributes are to be set or changed.
-- attributes: An object giving the attribute names and values, e.g. `{x:200, y:200}`
+- `element`: The element whose attributes are to be set or changed.
+- `attributes`: An object giving the attribute names and values, e.g. `{x:200, y:200}`
 
 Returns:
 - The given element.
@@ -73,12 +73,12 @@ setAttributes(elem, {transform:'rotate(30)'});
 #### Transforms 
 
 ---------------------------------
-##### setTransform(element, transforms) 
+##### `setTransform(element, transforms)` 
 Replace all transforms on an object with new transforms.
 
 Arguments:
-- element: The element whose transforms are to be set or changed.
-- transforms: An object, an array of objects or a string, e.g. `'translate(100 50) rotate(30)'` or `[{type:'translate', values:[100, 50]}, {type:'rotate', values:[30]}]`.
+- `element`: The element whose transforms are to be set or changed.
+- `transforms`: An object, an array of objects or a string, e.g. `'translate(100 50) rotate(30)'` or `[{type:'translate', values:[100, 50]}, {type:'rotate', values:[30]}]`.
 
 Returns:
 - The new transforms of the element as an array of objects.
@@ -98,12 +98,12 @@ setTransform(elem, [{type:'translate', values:[40, 70]}, {type:'rotate', values:
 
 
 ---------------------------------
-##### appendTransform(element, transforms) 
+##### `appendTransform(element, transforms)` 
 Add one or more transforms to an object that already has transforms.
 
 Arguments:
-- element: The element where the transforms should be appended.
-- transforms: An object, an array of objects or a string, e.g. `'translate(100 50) rotate(30)'` or `[{type:'rotate', values:[30]}, {type:'translate', values:[100, 50]}]`.
+- `element`: The element where the transforms should be appended.
+- `transforms`: An object, an array of objects or a string, e.g. `'translate(100 50) rotate(30)'` or `[{type:'rotate', values:[30]}, {type:'translate', values:[100, 50]}]`.
 
 Returns:
 - The new transforms of the element as an array of objects.
@@ -122,51 +122,51 @@ appendTransform(elem, {type:'rotate', values:[30]});
 ```
 
 ---------------------------------
-##### clearTransform(element) 
+##### `clearTransform(element)` 
 Removes all transforms from an element.
 
 Arguments:
-- element: The element from where the transforms should be removed.
+- `element`: The element from where the transforms should be removed.
 
 Returns:
 - The transforms of the element that has been removed as an array of objects.
 
 
 ---------------------------------
-##### getTransform(element) 
+##### `getTransform(element)` 
 Converts the transform string of the given element to an array of objects.
 
 Arguments:
-- element: The element to get the transforms from.
+- `element`: The element to get the transforms from.
 
 Returns:
 - The transforms of the element as an array of objects.
 
 
 ---------------------------------
-##### transformFromString(str) 
+##### `transformFromString(str)` 
 Convert a transform string into an array of transform objects.
 
 
 ---------------------------------
-#### Mouse 
+#### `Mouse` 
 The `Mouse` object provides information about the mouse position and which mouse button is pressed.
 
-- Mouse.x: X coordinate of the mouse relative to the upper left corner of the SVG
-- Mouse.y: Y coordinate of the mouse relative to the upper left corner of the SVG
-- Mouse.button: Number of the mouse button that is currently pressed. Left button = 0, middle button = 1, right button = 2, no button pressed = -1.
+- `Mouse.x`: X coordinate of the mouse relative to the upper left corner of the SVG
+- `Mouse.y`: Y coordinate of the mouse relative to the upper left corner of the SVG
+- `Mouse.button`: Number of the mouse button that is currently pressed. Left button = 0, middle button = 1, right button = 2, no button pressed = -1.
 
 
 ---------------------------------
 #### Animation 
 
 ---------------------------------
-##### animate(function, fps) 
+##### `animate(function, fps)` 
 This function provides an easy way for frame based animation.
 
 Arguments:
-- function: The function, that will be executed every frame.
-- fps (optional): Frames per second as a number. Default is 60.
+- `function`: The function, that will be executed every frame.
+- `fps` (optional): Frames per second as a number. Default is 60.
 
 Example:
 
@@ -185,7 +185,7 @@ animate(myAnimationFunction);
 #### Math 
 
 ---------------------------------
-##### random(low, high)
+##### `random(low, high)`
 Returns a random number between `low` and `high`.  
 
 Example:
@@ -196,7 +196,7 @@ var n = random(20, 50);
 ```
 
 ---------------------------------
-##### randomInt(low, high) 
+##### `randomInt(low, high)` 
 Returns a random integer number between `low` and `high`. 
 
 Example:
@@ -210,12 +210,12 @@ var n = randomInt(2, 4);
 #### Color 
 
 ---------------------------------
-##### gray(grayValue, alpha)
+##### `gray(grayValue, alpha)`
 Returns a string representing the given gray color. This string could be used for any color attribute.
 
 Arguments:
-- grayValue: A number between 0 and 255.
-- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+- `grayValue`: A number between 0 and 255.
+- `alpha` (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
 
 Returns:
 - A string representing the given color.
@@ -229,14 +229,14 @@ createNode('circle', {cx:300, cy:300, r:100, fill:col});
 ```
 
 ---------------------------------
-##### rgb(red, green, blue, alpha) 
+##### `rgb(red, green, blue, alpha)` 
 Returns a string representing the given rgb color. This string could be used for any color attribute.
 
 Arguments:
-- red: A number between 0 and 255.
-- green: A number between 0 and 255.
-- blue: A number between 0 and 255.
-- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+- `red`: A number between 0 and 255.
+- `green`: A number between 0 and 255.
+- `blue`: A number between 0 and 255.
+- `alpha` (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
 
 Returns:
 - A string representing the given color.
@@ -250,14 +250,14 @@ createNode('circle', {cx:300, cy:300, r:100, fill:col});
 ```
 
 ---------------------------------
-##### hsl(hue, saturation, lightness, alpha) 
+##### `hsl(hue, saturation, lightness, alpha)` 
 Returns a string representing the given hsl color. This string could be used for any color attribute.
 
 Arguments:
-- hue: A number between 0 and 360.
-- saturation: A number between 0 and 1.
-- lightness: A number between 0 and 1.
-- alpha (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
+- `hue`: A number between 0 and 360.
+- `saturation`: A number between 0 and 1.
+- `lightness`: A number between 0 and 1.
+- `alpha` (optional): A number between 0 and 1. 0 = completely transparent, 1 = completely opaque
 
 Returns:
 - A string representing the given color.
