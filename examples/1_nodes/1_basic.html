@@ -7,22 +7,17 @@
 </head>
 <body>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+</svg>
 
 <div>
-  Titel der Arbeit
+  A slightly rotated rectangle
 </div>
 
 <script src="../../lib/gmynd.js" type="text/javascript"></script>
 <script type="text/javascript">
 
-  var myCircle = createNode('circle', {cx:0, cy:300, r:20});
- 
-  var myAnimationFunction = function(currentFrameNumber) {
-    myCircle.setAttribute('cx', currentFrameNumber);
-  }
-
-  animate(myAnimationFunction);
+  createNode("rect", {x:200, y:200, width:200, height:200, transform:"rotate(15, 300, 300)"});
 
 </script>
 

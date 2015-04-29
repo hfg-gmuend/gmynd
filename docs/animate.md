@@ -19,3 +19,6 @@ var myAnimationFunction = function(currentFrameNumber) {
 
 animate(myAnimationFunction);
 ```
+
+See example:
+[1_animate_circle.html](../examples/3_animation/1_animate_circle.html)

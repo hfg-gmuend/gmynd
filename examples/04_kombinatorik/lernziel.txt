@@ -1,2 +1,0 @@
-Ausprobieren von Transformations-Kombinationen 
-Aufgabe: Jeweils 8 mal die gleiche Form, die in sich noch keine Symmetrie enthält, auf regelmäßige Weise kombinieren.

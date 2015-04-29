@@ -1,2 +1,0 @@
-Ausprobieren von Transformations-Kombinationen mittels JavaScript
-Vermutlich brauchen wir hier Vereinfachungen.

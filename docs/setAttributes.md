@@ -12,10 +12,12 @@ Returns:
 
 Example:
 
-The following script creates a rect, puts it inside the defs of the SVG and then creates an instance. 
+The following script creates a rect and sets some attributes afterwards. 
 ```javascript
-var elem = createNode('rect', {width:100, height:100});
-setAttributes(elem, {transform:'rotate(30)'});
+var elem = createNode("rect", {x:200, y:200, width:200, height:200});
+setAttributes(elem, {transform:"rotate(15, 300, 300)"});
+setAttributes(elem, {'stroke-width':10, stroke:gray(128)});
+
 ```
 
 

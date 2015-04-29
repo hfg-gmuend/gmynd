@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GMYND test</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../lib/gmynd_base.css">
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+</svg>
+
+<div>
+  Create multiple elements by using a loop
+</div>
+
+<script src="../../lib/gmynd.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var xpos = 50;
+
+  while (xpos <= 500) {
+    var poly = createNode("polygon", {points:"0,0 0,-120 80,-170 20,-120", transform:"translate(" + xpos + " 350)"});
+    xpos = xpos + 40;
+  }
+
+
+</script>
+
+</body>
+</html>

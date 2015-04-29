@@ -1,3 +1,0 @@
-Verstehen von Grafik = Code = Grafik.
-Symetrieoperationen. Grundform anlegen, drehen, spiegeln, verschieben, ...
-SVG untersuchen
