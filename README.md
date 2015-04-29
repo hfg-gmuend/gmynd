@@ -25,6 +25,7 @@
 - [`animate(function, fps)`](docs/animate.md)
 
 ##### Math 
+- [`map(value, low1, high1, low2, high2)`](docs/map.md)
 - [`random(low, high)`](docs/random.md)
 - [`randomInt(low, high)`](docs/randomInt.md)
 
