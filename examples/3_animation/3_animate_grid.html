@@ -48,12 +48,6 @@
       clearTransform(element);
       appendTransform(element, {type:'rotate', values:[angle, cx, cy]});
       appendTransform(element, {type:'translate', values:[-s, -s]});
-      
-      // TODO: why is angle negative, but in the transform attribute of the element positive?
-      if (i==1) {
-        console.log(angle);
-        console.log(element);
-      }
     });
   }
   animate(anim);
