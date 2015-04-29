@@ -26,3 +26,6 @@ var anim = function(f) {
 
 animate(anim);
 ```
+
+See examples:
+- [1_mouse_follow.html](../examples/4_interaction/1_mouse_follow.html)

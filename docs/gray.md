@@ -17,3 +17,6 @@ This example creates a circle and sets the color to a middle gray.
 var col = gray(128);
 createNode('circle', {cx:300, cy:300, r:100, fill:col});
 ```
+
+See examples:
+- [6_set_attributes.html](../examples/1_nodes/6_set_attributes.html)

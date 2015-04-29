@@ -22,3 +22,8 @@ or
 var elem = createNode('rect', {width:100, height:100, transform:'translate(40 70)'});
 appendTransform(elem, {type:'rotate', values:[30]});
 ```
+
+See examples:
+- [1_append_Transform.html](../examples/2_transforms/1_append_Transform.html)
+- [2_append_Transform.html](../examples/2_transforms/2_append_Transform.html)
+- [3_animate_grid.html](../examples/3_animation/1_animate_grid.html)

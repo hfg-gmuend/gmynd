@@ -19,3 +19,9 @@ var myNewGroup = createNode('g');
 var c = createNode('circle', {cx:100, cy:200, r:80, transform:'scale(1.3)'}, false);
 myNewGroup.appendChild(c);
 ```
+
+See examples:
+- [1_basics.html](../examples/1_nodes/1_basics.html)
+- [2_create_row.html](../examples/1_nodes/2_create_row.html)
+- [3_grouping.html](../examples/1_nodes/3_grouping.html)
+- [4_clipping.html](../examples/1_nodes/4_clipping.html)

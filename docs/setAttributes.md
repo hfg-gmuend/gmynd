@@ -20,4 +20,6 @@ setAttributes(elem, {'stroke-width':10, stroke:gray(128)});
 
 ```
 
+See examples:
+- [6_set_attributes.html](../examples/1_nodes/6_set_attributes.html)
 

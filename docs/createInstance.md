@@ -20,3 +20,6 @@ var defs = createNode('defs');
 defs.appendChild(elem);
 createInstance(elem, {x:200, y:200});
 ```
+
+See examples:
+- [5_symbols.html](../examples/1_nodes/5_symbols.html)
