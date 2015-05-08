@@ -23,8 +23,7 @@
   var ypos = 500;
 
   while (xpos <= 500) {
-    var poly = createNode("polygon", {points:"0,0 0,-120 80,-170 20,-120", transform:"translate(" + xpos + " 350)"}, false);
-    gruppe.appendChild(poly);
+    var poly = createNode("polygon", {points:"0,0 0,-120 80,-170 20,-120", transform:"translate(" + xpos + " 350)"}, gruppe);
 
     xpos = xpos + 40;
   }

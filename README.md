@@ -7,8 +7,8 @@
 ### Reference
 
 ##### Node creation and manipulation
-- [`createNode(nodeName, attributes, draw)`](docs/createNode.md)
-- [`createInstance(sourceElement, attributes, draw)`](docs/createInstance.md)
+- [`createNode(nodeName, attributes, parent)`](docs/createNode.md)
+- [`createInstance(sourceElement, attributes, parent)`](docs/createInstance.md)
 - [`setAttributes(element, attributes)`](docs/setAttributes.md)
 
 ##### Transforms 

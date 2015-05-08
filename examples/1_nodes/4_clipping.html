@@ -17,9 +17,8 @@
 <script type="text/javascript">
 
   var defs = createNode('defs');
-  var clip = createNode('clipPath', {id:'clip'});
-  clip.appendChild(createNode('rect', {width:100, height:100}));
-  defs.appendChild(clip);
+  var clip = createNode('clipPath', {id:'clip'}, defs);
+  var rect = createNode('rect', {width:100, height:100}, clip);
   
   createNode('circle', {cx:100, cy:100, r:100, 'clip-path':'url(#clip)'});
 
