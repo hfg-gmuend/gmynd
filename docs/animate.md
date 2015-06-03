@@ -21,6 +21,6 @@ animate(myAnimationFunction);
 ```
 
 See examples:
-- [1_animate_circle.html](../examples/3_animation/1_animate_circle.html)
-- [2_animate_row.html](../examples/3_animation/1_animate_row.html)
+- [1_animate_circle_basic.html](../examples/3_animation/1_animate_circle_basic.html)
+- [2_animate_row_clearAll.html](../examples/3_animation/1_animate_row_clearAll.html)
 - [3_animate_grid.html](../examples/3_animation/1_animate_grid.html)

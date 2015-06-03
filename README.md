@@ -10,6 +10,7 @@
 - [`createNode(nodeName, attributes, parent)`](docs/createNode.md)
 - [`createInstance(sourceElement, attributes, parent)`](docs/createInstance.md)
 - [`setAttributes(element, attributes)`](docs/setAttributes.md)
+- [`clearAll()`](docs/clearAll.md)
 
 ##### Transforms 
 - [`setTransform(element, transforms)`](docs/setTransform.md)
