@@ -11,7 +11,7 @@ An array of all elements that have been removed.
 
 Example:
 
-The following will create a new group and a circle. The group is automatically added to the SVG, the circle is added to the group by using the `appendChild()` function.
+The following example uses the ´clearAll()´ function in an animation loop.
 ```javascript
 var myAnimationFunction = function(f) {
   clearAll();
