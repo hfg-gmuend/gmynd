@@ -11,7 +11,7 @@ An array of all elements that have been removed.
 
 Example:
 
-The following example uses the ´clearAll()´ function in an animation loop.
+The following example uses the `clearAll()` function in an animation loop.
 ```javascript
 var myAnimationFunction = function(f) {
   clearAll();
