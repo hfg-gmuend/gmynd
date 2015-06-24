@@ -29,6 +29,8 @@
 - [`map(value, low1, high1, low2, high2)`](docs/map.md)
 - [`random(low, high)`](docs/random.md)
 - [`randomInt(low, high)`](docs/randomInt.md)
+- [`radians(deg)`](docs/radians.md)
+- [`degrees(rad)`](docs/degrees.md)
 
 ##### Color 
 - [`gray(grayValue, alpha)`](docs/gray.md)
