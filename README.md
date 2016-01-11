@@ -27,10 +27,12 @@
 
 ##### Math 
 - [`map(value, low1, high1, low2, high2)`](docs/map.md)
+- [`lerp(value1, value2, t)`](docs/lerp.md)
 - [`random(low, high)`](docs/random.md)
 - [`randomInt(low, high)`](docs/randomInt.md)
 - [`radians(deg)`](docs/radians.md)
 - [`degrees(rad)`](docs/degrees.md)
+- [`distance(x1, y1, x2, y2)`](docs/distance.md)
 
 ##### Color 
 - [`gray(grayValue, alpha)`](docs/gray.md)
