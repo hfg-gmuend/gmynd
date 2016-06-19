@@ -15,6 +15,7 @@
 ##### Transforms 
 - [`setTransform(element, transforms)`](docs/setTransform.md)
 - [`appendTransform(element, transforms)`](docs/appendTransform.md)
+- [`replaceTransform(element, transform, index)`](docs/replaceTransform.md)
 - [`clearTransform(element)`](docs/clearTransform.md)
 - [`getTransform(element)`](docs/getTransform.md)
 - [`transformFromString(str)`](docs/transformFromString.md)
