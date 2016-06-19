@@ -34,11 +34,16 @@
 - [`radians(deg)`](docs/radians.md)
 - [`degrees(rad)`](docs/degrees.md)
 - [`distance(x1, y1, x2, y2)`](docs/distance.md)
+- [`polarToCartesian(radius, angle)`](docs/polarToCartesian.md)
+- [`cartesianToPolar(x, y)`](docs/cartesianToPolar.md)
 
 ##### Color 
 - [`gray(grayValue, alpha)`](docs/gray.md)
 - [`rgb(red, green, blue, alpha)`](docs/rgb.md)
 - [`hsl(hue, saturation, lightness, alpha)`](docs/hsl.md)
+
+##### Special Shapes 
+- [`arcPath(radius, startAngle, endAngle)`](docs/arcPath.md)
 
 ---------------------------------
 Suggestions? Bugs? File an issue! :)
