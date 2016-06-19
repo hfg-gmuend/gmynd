@@ -8,7 +8,7 @@ A string that could directly been used as a value for the `d` attribute of a pat
 
 Example:
 
-The following script creates a rect and appends a transform. 
+The following script creates an arc with radius 70 from 30 to 80 degrees. 
 ```javascript
 createNode('path', {
 				d: arcPath( 70, radians(30), radians(80) ),
