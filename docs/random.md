@@ -7,6 +7,6 @@ Example:
 
 Get a random number between 20 and 50. The result will be something like `38.519687323693304`.
 ```javascript
-var n = random(20, 50);
+let n = gmynd.random(20, 50);
 ```
 

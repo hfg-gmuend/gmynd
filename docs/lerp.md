@@ -7,6 +7,6 @@ Example:
 
 Interpolate half way between 2 and 5. The result in `lerpedValue` will be `3.5`.
 ```javascript
-var lerpedValue = lerp(2, 5, 0.5);
+let lerpedValue = gmynd.lerp(2, 5, 0.5);
 ```
 

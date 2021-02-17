@@ -7,6 +7,6 @@ Example:
 
 The variable angle will contain 180.
 ```javascript
-var angle = degrees(Math.PI);
+let angle = gmynd.degrees(Math.PI);
 ```
 

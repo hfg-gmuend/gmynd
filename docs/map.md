@@ -7,14 +7,14 @@ Examples:
 
 ```javascript
 // Map the value in the variable n from the range 1 to 3 into the range 0 to -10
-var n = 2;
-var mappedValue = map(n, 1, 3, 0, -10);
+let n = 2;
+let mappedValue = gmynd.map(n, 1, 3, 0, -10);
 // mappedValue will be -5
 ```
 
 ```javascript
 // Map with clipping
-var n = 100;
-var mappedValue = map(n, 10, 20, 0, 255, true);
+let n = 100;
+let mappedValue = gmynd.map(n, 10, 20, 0, 255, true);
 // mappedValue will be 255
 ```

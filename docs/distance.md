@@ -7,6 +7,6 @@ Example:
 
 Calculate the distance between point `100, 100` and point `200, 200`. The result will be around 141.42.
 ```javascript
-var d = distance(100, 100, 200, 200);
+let d = gmynd.distance(100, 100, 200, 200);
 ```
 

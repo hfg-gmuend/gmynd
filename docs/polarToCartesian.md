@@ -10,6 +10,6 @@ Example:
 
 The result in `cartesianCoordinate` will be `{ x: 86.60254037844388, y: 50 }`.
 ```javascript
-var cartesianCoordinate = polarToCartesian(100, radians(30));
+let cartesianCoordinate = gmynd.polarToCartesian(100, gmynd.radians(30));
 ```
 

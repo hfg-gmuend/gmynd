@@ -7,6 +7,6 @@ Example:
 
 The variable angle will contain 4.7124 (= 1,5 * PI).
 ```javascript
-var angle = radians(270);
+let angle = gmynd.radians(270);
 ```
 

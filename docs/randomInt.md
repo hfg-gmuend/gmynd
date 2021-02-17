@@ -7,6 +7,6 @@ Example:
 
 Get a random integer number between 2 and 4. The result will be `2`, `3` or `4`.
 ```javascript
-var n = randomInt(2, 4);
+let n = gmynd.randomInt(2, 4);
 ```
 
