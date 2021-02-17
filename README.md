@@ -6,13 +6,13 @@
 ---------------------------------
 ### Reference
 
-##### Data manipulation
+#### Data manipulation
 TODO
 
-##### Array helpers
+#### Array helpers
 TODO
 
-##### Math 
+#### Math 
 - [`map(value, low1, high1, low2, high2, clipping=false)`](docs/map.md)
 - [`lerp(value1, value2, t)`](docs/lerp.md)
 - [`random(low, high)`](docs/random.md)
