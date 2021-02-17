@@ -1,33 +1,19 @@
 # G•M•Y•N•D
 
-**A utility library and boilerplate for working with SVG in JavaScript**
+**A javascript utility library**
 
 
 ---------------------------------
 ### Reference
 
-##### Node creation and manipulation
-- [`createNode(nodeName, attributes, parent)`](docs/createNode.md)
-- [`createInstance(sourceElement, attributes, parent)`](docs/createInstance.md)
-- [`setAttributes(element, attributes)`](docs/setAttributes.md)
-- [`clearAll()`](docs/clearAll.md)
+##### Data manipulation
+TODO
 
-##### Transforms 
-- [`setTransform(element, transforms)`](docs/setTransform.md)
-- [`appendTransform(element, transforms)`](docs/appendTransform.md)
-- [`replaceTransform(element, transform, index)`](docs/replaceTransform.md)
-- [`clearTransform(element)`](docs/clearTransform.md)
-- [`getTransform(element)`](docs/getTransform.md)
-- [`transformFromString(str)`](docs/transformFromString.md)
-
-##### Mouse 
-- [`Mouse`](docs/Mouse.md)
-
-##### Animation 
-- [`animate(function, fps)`](docs/animate.md)
+##### Array helpers
+TODO
 
 ##### Math 
-- [`map(value, low1, high1, low2, high2)`](docs/map.md)
+- [`map(value, low1, high1, low2, high2, clipping=false)`](docs/map.md)
 - [`lerp(value1, value2, t)`](docs/lerp.md)
 - [`random(low, high)`](docs/random.md)
 - [`randomInt(low, high)`](docs/randomInt.md)
@@ -37,13 +23,6 @@
 - [`polarToCartesian(radius, angle)`](docs/polarToCartesian.md)
 - [`cartesianToPolar(x, y)`](docs/cartesianToPolar.md)
 
-##### Color 
-- [`gray(grayValue, alpha)`](docs/gray.md)
-- [`rgb(red, green, blue, alpha)`](docs/rgb.md)
-- [`hsl(hue, saturation, lightness, alpha)`](docs/hsl.md)
-
-##### Special Shapes 
-- [`arcPath(radius, startAngle, endAngle)`](docs/arcPath.md)
 
 ---------------------------------
 Suggestions? Bugs? File an issue! :)

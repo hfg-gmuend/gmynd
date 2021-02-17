@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GMYND test</title>
+  <meta charset="utf-8">
+  <script src="./superheroes/characters_info.js" type="text/javascript"></script>
+  <script src="./superheroes/characters_stats.js" type="text/javascript"></script>
+  <script src="./superheroes/characters_powers.js" type="text/javascript"></script>
+  <script src="../dist/gmynd.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div>
+  Open the console to see if Gmynd is working correctly
+</div>
+
+
+<script type="text/javascript">
+
+  console.log("Hello Gmynd!");
+  console.log(gmynd);
+
+  console.log("--------------------------------------");
+  console.log("gmynd.map(123, 100, 200, 0, 1)");
+  console.log(gmynd.map(123, 100, 200, 0, 1));
+
+  console.log("--------------------------------------");
+  console.log("gmynd.random(5, 10)");
+  console.log(gmynd.random(5, 10));
+
+  console.log("--------------------------------------");
+  console.log('charactersMerged = gmynd.mergeData(charactersInfo, charactersStats, "Name")');
+  let charactersMerged = gmynd.mergeData(charactersInfo, charactersStats, "Name");
+  console.log(charactersMerged);
+
+  console.log("--------------------------------------");
+  console.log('charactersIntersected = gmynd.intersectData(charactersInfo, charactersStats, "Name")');
+  let charactersIntersected = gmynd.intersectData(charactersInfo, charactersStats, "Name");
+  console.log(charactersIntersected);
+
+  console.log("--------------------------------------");
+  console.log('charactersGrouped = gmynd.groupData(charactersMerged, ["Publisher", "Alignment"])');
+  let charactersGrouped = gmynd.groupData(charactersMerged, ["Publisher", "Alignment"]);
+  console.log(charactersGrouped);
+
+  console.log("--------------------------------------");
+  console.log('charactersFiltered = gmynd.filterRequiredProps(charactersMerged, ["Height", "Total"])');
+  let charactersFiltered = gmynd.filterRequiredProps(charactersMerged, ["Height", "Total"]);
+  console.log(charactersFiltered);
+
+  console.log("--------------------------------------");
+  console.log('charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Average"}, {value:"Total", method:"Average"}])');
+  let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Median"}, {value:"Total", method:"Average"}]);
+  console.log(charactersCumulated);
+
+
+  //gmynd.exportJSON(characters);
+
+</script>
+
+</body>
+</html>
