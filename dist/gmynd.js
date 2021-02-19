@@ -1,5 +1,5 @@
 window.gmynd = (function() {
- 
+
   return {
 
     // JSON / Object manipulation related:
@@ -124,14 +124,14 @@ window.gmynd = (function() {
       }
     },
 
-    mergeData: function(arr1, arr2, identifier1, identifier2 = identifier1) {
+    mergeData: function(arr1, arr2, key1, key2 = key1) {
       // Kombiniert zwei Objekt-Arrays anhand einer oder zwei Identifier-Properties
       // nur Elemente, die in beiden Arrays gefunden werden, werden im Ergebnis-Array übernommen
       let mergedData = [];
       arr1.forEach(firstArrayElement => {
         let newEntry = Object.assign({}, firstArrayElement);
         arr2.forEach(secondArrayElement => {
-          if (firstArrayElement[identifier1] === secondArrayElement[identifier2]) {
+          if (firstArrayElement[key1] === secondArrayElement[key2]) {
             for (let property in secondArrayElement) {
               if (secondArrayElement.hasOwnProperty(property)) {
                 newEntry[property] = secondArrayElement[property];
@@ -145,13 +145,13 @@ window.gmynd = (function() {
       return mergedData;
     },
 
-    intersectData: function(baseArr, filterArr, identifier1, identifier2 = identifier1) {
+    intersectData: function(baseArr, filterArr, key1, key2 = key1) {
       // returns JSON elements matching second JSON
       let newArr = [];
       baseArr.forEach((baseElement, i) => {
         let takeElement = false;
         filterArr.forEach(filterElement => {
-          if (baseElement[identifier1] === filterElement[identifier2]) {
+          if (baseElement[key1] === filterElement[key2]) {
             takeElement = true;
           }
         });
@@ -178,12 +178,12 @@ window.gmynd = (function() {
       return filteredArr;
     },
 
-    deleteDoublettes: function(arr, identifier, keepFirst = true) {
+    deleteDoublettes: function(arr, key, keepFirst = true) {
       let newArr = [];
       arr.forEach(el => {
         let isNew = true;
         newArr.forEach((takenEl, i) => {
-          if (takenEl[identifier] === el[identifier]) {
+          if (takenEl[key] === el[key]) {
             isNew = false;
             if (!keepFirst) newArr[i] = el;
           }
@@ -305,39 +305,59 @@ window.gmynd = (function() {
       });
     },
 
-    dynamicSort: function(prop) {
-      // taken from https://stackoverflow.com/a/4760279
-      // sorts Array of Object by values of a given property (multiple params possible)
-      let sortOrder = 1;
-      if (prop[0] === "-") {
-        sortOrder = -1;
-        prop = prop.substr(1);
-      }
-      return function(a, b) {
-        let result = (a[prop] < b[prop]) ? -1 : (a[prop] > b[prop]) ? 1 : 0;
-        return result * sortOrder;
-      }
-    },
-
-    sortJSON: function(arr, props) {
-      // makes dynamicSort and dynamicSortMultiple easier to use (thus decreasing performance):
+    sortData: function(arr, props) {
+      // variation from https://stackoverflow.com/a/4760279
       if (!this.isArray(props)) props = [props];
-      return arr.sort(this.dynamicSortMultiple(...props));
-    },
-
-    dynamicSortMultiple: function() {
-      let props = arguments;
-      return function(obj1, obj2) {
-        let i = 0,
-          result = 0,
-          numberOfProperties = props.length;
-        while (result === 0 && i < numberOfProperties) {
-          result = utils.dynamicSort(props[i])(obj1, obj2);
-          i++;
+      return arr.sort((a, b) => {
+        let result = 0;
+        for (let i = 0; i < props.length; i++) {
+          let prop = props[i];
+          let sortOrder = 1;
+          if (prop[0] === "-") {
+            sortOrder = -1;
+            prop = prop.substr(1);
+          }
+          result = (a[prop] < b[prop]) ? -1 : (a[prop] > b[prop]) ? 1 : 0;
+          result *= sortOrder;
+          if (result != 0) break;
         }
         return result;
-      };
+      });
     },
+
+    // dynamicSort: function(prop) {
+    //   // taken from https://stackoverflow.com/a/4760279
+    //   // sorts Array of Object by values of a given property (multiple params possible)
+    //   let sortOrder = 1;
+    //   if (prop[0] === "-") {
+    //     sortOrder = -1;
+    //     prop = prop.substr(1);
+    //   }
+    //   return function(a, b) {
+    //     let result = (a[prop] < b[prop]) ? -1 : (a[prop] > b[prop]) ? 1 : 0;
+    //     return result * sortOrder;
+    //   }
+    // },
+
+    // sortJSON: function(arr, props) {
+    //   // makes dynamicSort and dynamicSortMultiple easier to use (thus decreasing performance):
+    //   if (!this.isArray(props)) props = [props];
+    //   return arr.sort(this.dynamicSortMultiple(...props));
+    // },
+
+    // dynamicSortMultiple: function() {
+    //   let props = arguments;
+    //   return function(obj1, obj2) {
+    //     let i = 0,
+    //       result = 0,
+    //       numberOfProperties = props.length;
+    //     while (result === 0 && i < numberOfProperties) {
+    //       result = utils.dynamicSort(props[i])(obj1, obj2);
+    //       i++;
+    //     }
+    //     return result;
+    //   };
+    // },
 
     download: function(blob, filename) {
       if (window.navigator.msSaveOrOpenBlob) {
