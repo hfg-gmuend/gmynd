@@ -27,7 +27,7 @@ This will group `superheroes` by `Gender` and `Alignment`:
 let groupedSuperheroes = gmynd.groupData(superheroes, ['Gender', 'Alignment']);
 ```
 
-The result will be something like this where every `{…}` contains one of the original data item:
+The result will be something like this where every `{…}` contains one of the original data items:
 ```javascript
 {
   Female: {
@@ -51,6 +51,8 @@ The result will be something like this where every `{…}` contains one of the o
 ```
 
 #### Example 2:
+
+Special case where the values of a property are arrays.
 
 ```javascript
 let movies = [ 
