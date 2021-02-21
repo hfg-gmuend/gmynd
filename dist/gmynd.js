@@ -214,22 +214,57 @@ window.gmynd = (function () {
         convertPropToBoolean: function (data, prop, strictMode = false) {
             // with strictMode off, all values >=1 are set to true, all others to false
             // generally, everything this function doesn't recognize as true is set to false
-
             let newData = [...data];
             const trueStrings = ["1", "true", "yes", "+", "wahr", "ja"];
             newData.forEach(obj => {
                 let val = obj[prop];
                 let bool;
-                if (this.isString(val)) bool = trueStrings.includes(val.trim().toLowerCase());
-                else if (!isNaN(val)) bool = strictMode ? val === 1 : val >= 1;
-                else bool = false;
+                if (val === true) bool = true;
+                else {
+                    if (this.isString(val)) bool = trueStrings.includes(val.trim().toLowerCase());
+                    else if (!isNaN(val)) bool = strictMode ? val === 1 : val >= 1;
+                    else bool = false;
+                }
                 obj[prop] = bool;
             });
+            return newData;
         },
 
         deleteDataWithWrongPropType: function (data, prop, allowedType) {
-            //other name suggestion: filterPropType()
-            //possible Inputs: "Integer", "Number", "String", "Array", "Object",
+            // other name suggestion: filterPropType()
+            // possible Inputs: "Boolean", "Integer", "Number", "String", "Array", "Object"
+            let newData = [...data];
+            for (let i = 0; i < newData.length; i++) {
+                let val = newData[i][prop];
+                let keep;
+                switch (allowedType) {
+                    case "Boolean":
+                        keep = typeof val === "boolean";
+                        break;
+                    case "Integer":
+                        keep = parseInt(val) === val && !isNaN(val);
+                        break;
+                    case "Number":
+                        keep = Number(val) === val && !isNaN(val);
+                        break;
+                    case "String":
+                        keep = this.isString(val);
+                        break;
+                    case "Array":
+                        keep = this.isArray(val);
+                        break;
+                    case "Object":
+                        keep = this.isObject(val);
+                        break;
+                    default:
+                        keep = false;
+                }
+                if (!keep) {
+                    newData.splice(i, 1);
+                    i--;
+                }
+            }
+            return newData;
         },
 
         addPropPercentage: function (data, prop, keyName = prop + "Percentage") {
@@ -485,6 +520,10 @@ window.gmynd = (function () {
             return typeof val === 'string';
         },
 
+        isObject: function (val) {
+            return typeof val === 'object' && val !== null;
+        },
+
         circleRadius: function (area) {
             //returns circle radius of given circle area
             return Math.sqrt(area / Math.PI);
@@ -502,6 +541,12 @@ window.gmynd = (function () {
                 if (val > high1) val = high1;
             }
             return (val - low1) / (high1 - low1) * (high2 - low2) + low2;
+        },
+
+        frame: function (val, min, max) {
+            val = val < min ? min : val;
+            val = val > max ? max : val;
+            return val;
         },
 
         random: function (low, high) {
