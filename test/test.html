@@ -56,7 +56,20 @@
   let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Median"}, {value:"Total", method:"Average"}]);
   console.log(charactersCumulated);
 
-
+  console.log("--------------------------------------");
+  console.log('convertedToNumber = gmynd.convertPropToNumber(stringNumbers, "test", true)');
+  const stringNumbers = [
+      {"test": "1"},
+      {"test": "2,2"},
+      {"test": "3.3"},
+      {"test": 4.4},
+      {"test": "5,555.55"},
+      {"test": "6 666,66"},
+      {"test": "test"},
+      {"test": [1, 2]},
+      {"test": {"test": 1}}];
+  let convertedToNumber = gmynd.convertPropToNumber(stringNumbers, "test", false);
+  console.log(convertedToNumber);
 
 
   //gmynd.saveData(characters);
