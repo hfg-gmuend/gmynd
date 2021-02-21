@@ -1,12 +1,12 @@
 [Back to reference](../README.md)
 
-##### `sortData(data, props)`
+### `sortData(data, props)`
 
 Sorts a data array by the given property names (keys). It returns a hierarchical object where all different values of the given properties are the new keys. Give `props` as an array of strings or just as a string if you have just one property for grouping.
 
 If you have arrays as values of a given property the item will be put in all these groups (see example 2).
 
-### Example 1:
+#### Example 1:
 
 If you have data like this:
 ```javascript
@@ -50,7 +50,7 @@ The result will be something like this where every `{…}` contains one of the o
 }
 ```
 
-### Example 2:
+#### Example 2:
 
 ```javascript
 let movies = [ 
