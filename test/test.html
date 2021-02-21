@@ -40,14 +40,16 @@
   console.log(charactersIntersected);
 
   console.log("--------------------------------------");
-  console.log('charactersGrouped = gmynd.groupData(charactersMerged, ["Publisher", "Alignment"])');
-  let charactersGrouped = gmynd.groupData(charactersMerged, ["Publisher", "Alignment"]);
-  console.log(charactersGrouped);
+  console.log('charactersFiltered = gmynd.deleteIncompleteData(charactersIntersected, ["Height", "Total"])');
+  let charactersFiltered = gmynd.deleteIncompleteData(charactersMerged, ["Height", "Total"]);
+  console.log('gmynd.sortData(charactersFiltered, ["Height", "-Total"])');
+  gmynd.sortData(charactersFiltered, ["-Total", "Height"]);
+  console.log(charactersFiltered);
 
   console.log("--------------------------------------");
-  console.log('charactersFiltered = gmynd.filterRequiredProps(charactersMerged, ["Height", "Total"])');
-  let charactersFiltered = gmynd.filterRequiredProps(charactersMerged, ["Height", "Total"]);
-  console.log(charactersFiltered);
+  console.log('charactersGrouped = gmynd.groupData(charactersFiltered, ["Publisher", "Alignment"])');
+  let charactersGrouped = gmynd.groupData(charactersMerged, ["Publisher", "Alignment"]);
+  console.log(charactersGrouped);
 
   console.log("--------------------------------------");
   console.log('charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Average"}, {value:"Total", method:"Average"}])');
@@ -55,7 +57,9 @@
   console.log(charactersCumulated);
 
 
-  //gmynd.exportJSON(characters);
+
+
+  //gmynd.saveData(characters);
 
 </script>
 

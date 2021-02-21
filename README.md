@@ -2,25 +2,43 @@
 
 **A javascript utility library**
 
+This library serves for (students) data visualization projects. It provides some data manipulation functions and other utility functions to make the life of javascript programming a bit easier. It's just a set of convenience functions, not a framework.
+
+### Some remarks about naming functions and arguments
+
+In this context "data" always refers to a JSON representation of a table, which is an array of simple objects like:
+```javascript
+let superheroes = [ 
+  {Name:"A-Bomb", Height:203, Weight:441},
+  {Name:"Abe Sapien", Height:191, Weight:65},
+  {Name:"Abin Sur", Height:185, Weight:90},
+  {Name:"Abomination", Height:203, Weight:441},
+  {Name:"Absorbing Man", Height:193, Weight:122
+  ...
+]
+```
+
+
+
 
 ---------------------------------
 ### Reference
 
 #### Data manipulation
-In this context "data" always refers to a JSON representation of a table, which is an array
-of objects like `[{Gender:'F', Age:32}, {Gender:'M', Age:73}, ...]`.
 
+- [`sortData(data, props)`](docs/sortData.md)
 - [`groupData(data, props)`](docs/groupData.md)
 - [`cumulateData(data, props, calculations = [])`](docs/cumulateData.md)
 - [`mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
-- [`intersectData(baseArr, filterArr, prop1, prop2 = prop1)`](docs/intersectData.md)
-- [`sortData(data, props)`](docs/sortData.md)
+- [`intersectData(baseData, filterData, prop1, prop2 = prop1)`](docs/intersectData.md)
 
 
 #### Array helpers
+
 TODO
 
 #### Math and utilities
+
 - [`map(value, low1, high1, low2, high2, clipping=false)`](docs/map.md)
 - [`lerp(value1, value2, t)`](docs/lerp.md)
 - [`random(low, high)`](docs/random.md)
@@ -28,46 +46,66 @@ TODO
 - [`radians(deg)`](docs/radians.md)
 - [`degrees(rad)`](docs/degrees.md)
 - [`distance(x1, y1, x2, y2)`](docs/distance.md)
-- [`polarToCartesian(radius, angle)`](docs/polarToCartesian.md)
-- [`cartesianToPolar(x, y)`](docs/cartesianToPolar.md)
-- [`getRadiusByArea(area)`](docs/getRadiusByArea.md)
-- [`getAreaByRadius(radius)`](docs/getAreaByRadius.md)
+- [`cartesian(radius, angle)`](docs/cartesian.md)
+- [`polar(x, y)`](docs/polar.md)
+- [`circleRadius(area)`](docs/circleRadius.md)
+- [`circleArea(radius)`](docs/circleArea.md)
 - [`isString(value)`](docs/isString.md)
 
 ---------------------------------
 Suggestions? Bugs? File an issue! :)
 
 
+sortData:                   -> sortData      
+groupData:                  -> groupData     
+cumulateData:               -> cumulateData  
+mergeData:                  -> mergeData    
+intersectData:              -> intersectData
 
+filterRequiredProps:        -> deleteIncompleteData
+deleteDoublettes:           -> deleteDuplicateData
 
-    groupData(arr, props)
-    cumulateData(arr, props, calculations = [])
-    mergeData(arr1, arr2, key1, key2 = key1)
-    intersectData(baseArr, filterArr, key1, key2 = key1)
-    filterRequiredProps(arr, props)
-    deleteDoublettes(arr, key, keepFirst = true)
-    getPropertyPercentages(arr, prop, keyName = prop + "Percentage")
-    getPropertySegments(arr, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null)
-    getPropertyRank(arr, prop, keyName = prop + "Rank")
-    getObjByKeyVal(set, key, val)
-    getFirstObjByKeyVal(set, key, val)
-    getPropertyMax(arr, prop)
-    getPropertyMin(arr, prop)
-    getPropertySum(arr, prop)
-    getExtremes(arr, prop)
-    arrayFromProps(obj, props, fallbackVal = null)
-    batchArrayFromProps(arr, props, propName, deleteProps = true, fallbackVal = null)
-    deleteProps(obj, props)
-    batchDeleteProps(arr, props)
-    dynamicSort(prop)
-    sortJSON(arr, props)
-    dynamicSortMultiple()
-    download(blob, filename)
-    exportJSON(arr, pretty = true)
-    arraySum(arr)
-    countInArray(array, val)
-    arrayAverage(arr, ignoreEmpty = false)
-    lastOfArray(arr, noEmptyValues = false)
-    shuffleArray(arr)
-    isArray(val)
-    getDuration(date1, date2)
+getPropertyPercentages:     -> addPropPercentage
+getPropertySegments:        -> addPropSegment
+getPropertyRank:            -> addPropRanks
+
+getObjByKeyVal:             -> findAllByValue
+getFirstObjByKeyVal:        -> findFirstByValue
+
+getPropertyMax:             -> dataMax
+getPropertyMin:             -> dataMin
+getExtremes:                -> dataExtremes
+getPropertySum:             -> dataSum
+
+arrayFromProps:             -> arrayFromProps
+batchArrayFromProps:        -> arrayFromPropsInData
+deleteProps:                -> deleteProps
+batchDeleteProps:           -> deletePropsInData
+
+exportJSON:                 -> saveData
+download:                   -> download   (nicht dokumentiert)
+
+arraySum:                   -> arraySum
+countInArray:               -> arrayCount
+arrayAverage:               -> arrayAverage
+lastOfArray:                -> arrayLast
+shuffleArray:               -> shuffleArray
+
+isArray:                    -> isArray 
+isString:                   -> isString
+
+map:                        -> map
+random:                     -> random   
+randomInt:                  -> randomInt
+lerp:                       -> lerp     
+distance:                   -> distance 
+
+radians:                    -> radians  
+degrees:                    -> degrees  
+polarToCartesian:           -> cartesian
+cartesianToPolar:           -> polar
+getRadiusByArea:            -> circleRadius
+getAreaByRadius:            -> circleArea
+
+getDuration:                -> duration
+

@@ -124,14 +124,14 @@ window.gmynd = (function() {
       }
     },
 
-    mergeData: function(arr1, arr2, key1, key2 = key1) {
+    mergeData: function(data1, data2, prop1, prop2 = prop1) {
       // Kombiniert zwei Objekt-Arrays anhand einer oder zwei Identifier-Properties
       // nur Elemente, die in beiden Arrays gefunden werden, werden im Ergebnis-Array übernommen
       let mergedData = [];
-      arr1.forEach(firstArrayElement => {
+      data1.forEach(firstArrayElement => {
         let newEntry = Object.assign({}, firstArrayElement);
-        arr2.forEach(secondArrayElement => {
-          if (firstArrayElement[key1] === secondArrayElement[key2]) {
+        data2.forEach(secondArrayElement => {
+          if (firstArrayElement[prop1] === secondArrayElement[prop2]) {
             for (let property in secondArrayElement) {
               if (secondArrayElement.hasOwnProperty(property)) {
                 newEntry[property] = secondArrayElement[property];
@@ -145,26 +145,26 @@ window.gmynd = (function() {
       return mergedData;
     },
 
-    intersectData: function(baseArr, filterArr, key1, key2 = key1) {
+    intersectData: function(baseData, filterData, prop1, prop2 = prop1) {
       // returns JSON elements matching second JSON
-      let newArr = [];
-      baseArr.forEach((baseElement, i) => {
+      let newData = [];
+      baseData.forEach((baseElement, i) => {
         let takeElement = false;
-        filterArr.forEach(filterElement => {
-          if (baseElement[key1] === filterElement[key2]) {
+        filterData.forEach(filterElement => {
+          if (baseElement[prop1] === filterElement[prop2]) {
             takeElement = true;
           }
         });
-        if (takeElement) newArr.push(baseArr[i]);
+        if (takeElement) newData.push(baseData[i]);
       });
-      return newArr;
+      return newData;
     },
 
-    filterRequiredProps: function(arr, props) {
+    deleteIncompleteData: function(data, props) {
       if (!this.isArray(props)) props = [props];
 
-      let filteredArr = [];
-      arr.forEach(obj => {
+      let filteredData = [];
+      data.forEach(obj => {
         let propMissing = false;
         props.forEach(prop => {
           if (!obj.hasOwnProperty(prop)) {
@@ -173,63 +173,63 @@ window.gmynd = (function() {
             if (obj[prop] === undefined || obj[prop] === null || obj[prop] === "") propMissing = true;
           }
         });
-        if (!propMissing) filteredArr.push(obj);
+        if (!propMissing) filteredData.push(obj);
       });
-      return filteredArr;
+      return filteredData;
     },
 
-    deleteDoublettes: function(arr, key, keepFirst = true) {
-      let newArr = [];
-      arr.forEach(el => {
+    deleteDuplicateData: function(data, key, keepFirst = true) {
+      let newData = [];
+      data.forEach(el => {
         let isNew = true;
-        newArr.forEach((takenEl, i) => {
+        newData.forEach((takenEl, i) => {
           if (takenEl[key] === el[key]) {
             isNew = false;
-            if (!keepFirst) newArr[i] = el;
+            if (!keepFirst) newData[i] = el;
           }
         });
-        if (isNew) newArr.push(el);
+        if (isNew) newData.push(el);
       });
-      return newArr;
+      return newData;
     },
 
-    getPropertyPercentages: function(arr, prop, keyName = prop + "Percentage") {
-      let newArr = [...arr];
-      const sum = this.getPropertySum(newArr, prop);
-      newArr.forEach(obj => {
+    addPropPercentage: function(data, prop, keyName = prop + "Percentage") {
+      let newData = [...data];
+      const sum = this.dataSum(newData, prop);
+      newData.forEach(obj => {
         obj[keyName] = obj[prop] / sum;
       });
-      return newArr;
+      return newData;
     },
 
-    getPropertySegments: function(arr, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) {
-      let newArr = [...arr];
+    addPropSegment: function(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) {
+      let newData = [...data];
       const range = {
-        start: start ? start : this.getPropertyMin(arr, prop),
-        end: end ? end : this.getPropertyMax(arr, prop)
+        start: start ? start : this.dataMin(data, prop),
+        end: end ? end : this.dataMax(data, prop)
       };
       const segmentSize = Math.abs(range.end - range.start) / segmentCount;
-      newArr.forEach(obj => {
+      newData.forEach(obj => {
         obj[keyName] = Math.floor(obj[prop] / segmentSize);
         if (obj[keyName] >= segmentCount) obj[keyName] = segmentCount - 1;
       });
-      return newArr;
+      return newData;
     },
 
-    getPropertyRank: function(arr, prop, keyName = prop + "Rank") {
-      let newArr = [...arr];
-      newArr.sort(this.dynamicSort(prop));
+    addPropRank: function(data, prop, keyName = prop + "Rank") {
+      let newData = [...data];
+      newData.sort(this.dynamicSort(prop));
       let i = 0;
-      newArr.forEach(obj => {
+      newData.forEach(obj => {
         if (obj.hasOwnProperty(prop)) {
           obj[keyName] = i;
           i++;
         }
       });
-      return newArr;
+      return newData;
     },
 
-    getObjByKeyVal: function(set, key, val) {
+    findAllByValue: function(set, key, val) {
       // taken from https://stackoverflow.com/a/13964186
       // gibt ein Array derjenigen Objekte aus dem Array *set* zurück,
       // die den Wert *val* für die Property *key* haben
@@ -238,34 +238,34 @@ window.gmynd = (function() {
       });
     },
 
-    getFirstObjByKeyVal: function(set, key, val) {
-      let arr = this.getObjByKeyVal(set, key, val);
+    findFirstByValue: function(set, key, val) {
+      let arr = this.findAllByValue(set, key, val);
       return arr.length > 0 ? arr[0] : null;
     },
 
-    getPropertyMax: function(arr, prop) {
+    dataMax: function(arr, prop) {
       // gibt das Maximum der Property *prop* aller Objekte im Array *arr* zurück.
       return Math.max.apply(Math, arr.map(function(obj) {
         return obj[prop] ? obj[prop] : -Infinity;
       }));
     },
 
-    getPropertyMin: function(arr, prop) {
+    dataMin: function(arr, prop) {
       // gibt das Maximum der Property *prop* aller Objekte im Array *arr* zurück.
       return Math.min.apply(Math, arr.map(function(obj) {
         return obj[prop] ? obj[prop] : Infinity;
       }))
     },
 
-    getPropertySum: function(arr, prop) {
+    dataSum: function(arr, prop) {
       //taken from https://stackoverflow.com/a/23247980
       return arr.reduce((a, b) => a + (b[prop] || 0), 0);
     },
 
-    getExtremes: function(arr, prop) {
+    dataExtremes: function(arr, prop) {
       return {
-        "min": this.getPropertyMin(arr, prop),
-        "max": this.getPropertyMax(arr, prop)
+        "min": this.dataMin(arr, prop),
+        "max": this.dataMax(arr, prop)
       };
     },
 
@@ -280,7 +280,7 @@ window.gmynd = (function() {
       return propArr;
     },
 
-    batchArrayFromProps: function(arr, props, propName, deleteProps = true, fallbackVal = null) {
+    arrayFromPropsInData: function(arr, props, propName, deleteProps = true, fallbackVal = null) {
       // does arrayFromProps() for every object inside a given JSON. returns the JSON.
       arr.forEach(el => {
         el[propName] = this.arrayFromProps(el, props, fallbackVal);
@@ -296,7 +296,7 @@ window.gmynd = (function() {
       });
     },
 
-    batchDeleteProps: function(arr, props) {
+    deletePropsInData: function(arr, props) {
       if (!this.isArray(props)) props = [props];
       arr.forEach(el => {
         props.forEach(prop => {
@@ -306,7 +306,7 @@ window.gmynd = (function() {
     },
 
     sortData: function(arr, props) {
-      // variation from https://stackoverflow.com/a/4760279
+      // Variation from https://stackoverflow.com/a/4760279
       if (!this.isArray(props)) props = [props];
       return arr.sort((a, b) => {
         let result = 0;
@@ -377,7 +377,7 @@ window.gmynd = (function() {
       }
     },
 
-    exportJSON: function(arr, pretty = true) {
+    saveData: function(arr, pretty = true) {
       let c = JSON.stringify(arr);
       if (pretty) c = c.replaceAll('}', '\n}');
       if (pretty) c = c.replaceAll('{', '{\n\t');
@@ -394,22 +394,22 @@ window.gmynd = (function() {
       return arr.reduce((pv, cv) => parseInt(pv) + parseInt(cv), 0);
     },
 
-    countInArray: function(array, val) {
+    arrayCount: function(array, val) {
       // how often does given value in given array exist?
       return array.filter(item => item === val).length;
     },
 
     arrayAverage: function(arr, ignoreEmpty = false) {
-      if (ignoreEmpty) arr = arr.filter(el => el !== null && el !== "");
+      if (ignoreEmpty) arr = arr.filter(el => el !== null && el !== undefined && el !== "");
       return this.arraySum(arr) / arr.length;
     },
 
-    lastOfArray: function(arr, noEmptyValues = false) {
+    arrayLast: function(arr, noEmptyValues = false) {
       let lastVal = null;
       if (noEmptyValues) {
         let i;
         for (i = arr.length - 1; i >= 0; i--)
-          if (arr[i] && arr[i] !== "") break;
+          if (arr[i] && arr[i] !== "" && arr[i] !== undefined && arr[i] !== null) break;
         lastVal = arr[i];
       } else lastVal = arr.slice(-1)[0];
       return lastVal;
@@ -446,12 +446,12 @@ window.gmynd = (function() {
       return typeof val === 'string';
     },
 
-    getRadiusByArea: function(area) {
+    circleRadius: function(area) {
       //returns circle radius of given circle area
       return Math.sqrt(area / Math.PI);
     },
 
-    getAreaByRadius: function(r) {
+    circleArea: function(r) {
       return Math.PI * r * r;
     },
 
@@ -504,14 +504,14 @@ window.gmynd = (function() {
       return Math.sqrt((x2 -= x1) * x2 + (y2 -= y1) * y2);
     },
 
-    polarToCartesian: function(radius, angle) {
+    cartesian: function(radius, angle) {
       return {
         x: radius * Math.cos(angle),
         y: radius * Math.sin(angle)
       };
     },
 
-    cartesianToPolar: function(x, y) {
+    polar: function(x, y) {
       return {
         radius: Math.sqrt(x * x + y * y),
         angle: Math.atan2(y, x)

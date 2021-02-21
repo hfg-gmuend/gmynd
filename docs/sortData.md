@@ -2,7 +2,7 @@
 
 ##### `sortData(data, props)`
 
-Sorts a [data](./data.md) array by the given property names (keys). The function modifies the data array and returns it. 
+Sorts a data array by the given property names (keys). The function modifies the data array and returns it. 
 Give `props` as an array of strings or just as a string if you have just one property for sorting. By default, values will be sorted ascending. You can prefix any of the property names with `"-"` to reverse the order for this key.
 
 If values are `undefined` the respective object will just stay in place and will not be sorted.
