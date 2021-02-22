@@ -42,6 +42,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
 - [`intersectData(baseData, filterData, prop1, prop2 = prop1)`](docs/intersectData.md)
 - [`findAllByValue(data, prop, val)`](docs/findAllByValue.md)
+- [`findFirstByValue(data, prop, val)`](docs/findAllByValue.md)
 
 #### Array helpers
 
@@ -51,7 +52,7 @@ TODO
 
 - [`map(value, low1, high1, low2, high2, clipping=false)`](docs/map.md)
 - [`lerp(value1, value2, t)`](docs/lerp.md)
-- [`clip(val, min, max)](docs/clip.md)
+- [`clip(val, min, max)`](docs/clip.md)
 - [`random(low, high)`](docs/random.md)
 - [`randomInt(low, high)`](docs/randomInt.md)
 - [`radians(deg)`](docs/radians.md)
