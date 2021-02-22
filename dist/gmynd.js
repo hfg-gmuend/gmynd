@@ -521,7 +521,7 @@ window.gmynd = (function() {
       return typeof val === 'object' && val !== null;
     },
 
-    frame: function(val, min, max) {
+    clip: function(val, min, max) {
       val = val < min ? min : val;
       val = val > max ? max : val;
       return val;
