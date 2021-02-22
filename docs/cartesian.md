@@ -1,12 +1,12 @@
 [Back to reference](../README.md)
 
-##### `cartesian(radius, angle)`
+### `cartesian(radius, angle)`
 Converts a polar coordinate given with `radius` and an `angle` in radians to a cartesian coordinate (x and y).
 
 Returns:
 An object `{ x: resultX, y: resultY }`.
 
-Example:
+#### Example:
 
 The result in `cartesianCoordinate` will be `{ x: 86.60254037844388, y: 50 }`.
 ```javascript

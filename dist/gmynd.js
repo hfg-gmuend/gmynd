@@ -8,13 +8,13 @@ window.gmynd = (function() {
     // Data is always a JSON representation of a table, which is an array
     // of objects like [{Gender:'F', Age:32}, {Gender:'M', Age:73}, ...]
 
-    groupData: function(arr, props) {
+    groupData: function(data, props) {
       if (!this.isArray(props)) props = [props];
       let result = {};
       // group on the first key from the given array
       let key = props.shift();
-      for (let i = 0; i < arr.length; i++) {
-        let dat = arr[i];
+      for (let i = 0; i < data.length; i++) {
+        let dat = data[i];
         // make an array for every unique value for that key
         // and fill it with every row that has that value
         if (Array.isArray(dat[key])) {
@@ -47,23 +47,23 @@ window.gmynd = (function() {
       return result;
     },
 
-    cumulateData: function(arr, props, calculations = []) {
+    cumulateData: function(data, props, calculations = []) {
       if (!this.isArray(props)) props = [props];
 
       let groupedData = {};
 
       // group all 'rows' of the original data
-      for (let i = 0; i < arr.length; i++) {
-        let key = arr[i][props[0]];
+      for (let i = 0; i < data.length; i++) {
+        let key = data[i][props[0]];
         for (let j = 1; j < props.length; j++) {
-          key += ',' + arr[i][props[j]];
+          key += ',' + data[i][props[j]];
         }
 
         if (!groupedData[key]) {
           groupedData[key] = [];
         }
 
-        groupedData[key].push(arr[i]);
+        groupedData[key].push(data[i]);
       }
 
       // convert values of the object to array
@@ -85,7 +85,7 @@ window.gmynd = (function() {
           let key = calculations[j].title;
           if (!key) key = calculations[j].value + calculations[j].method;
           // collect values to plain array
-          result[key] = groupedData[i].map(x => x[calculations[j].value]);
+          result[key] = groupedData[i].map(x => parseFloat(x[calculations[j].value]));
           // console.log(result[key])
 
           if (calculations[j].method === "Sum") {
@@ -114,7 +114,7 @@ window.gmynd = (function() {
       return cumulatedData;
 
       function percentile(arr, p) {
-        arr.sort();
+        arr.sort((a, b) => (a < b) ? -1 : (a > b) ? 1 : 0);
         let l = arr.length - 1;
         let idx = l * p;
         let frac = idx % 1;
@@ -178,12 +178,12 @@ window.gmynd = (function() {
       return filteredData;
     },
 
-    deleteDuplicateData: function(data, key, keepFirst = true) {
+    deleteDuplicateData: function(data, prop, keepFirst = true) {
       let newData = [];
       data.forEach(el => {
         let isNew = true;
         newData.forEach((takenEl, i) => {
-          if (takenEl[key] === el[key]) {
+          if (takenEl[prop] === el[prop]) {
             isNew = false;
             if (!keepFirst) newData[i] = el;
           }
@@ -229,17 +229,17 @@ window.gmynd = (function() {
       return newData;
     },
 
-    findAllByValue: function(set, key, val) {
+    findAllByValue: function(set, prop, val) {
       // taken from https://stackoverflow.com/a/13964186
       // gibt ein Array derjenigen Objekte aus dem Array *set* zurück,
-      // die den Wert *val* für die Property *key* haben
+      // die den Wert *val* für die Property *prop* haben
       return set.filter(obj => {
-        return obj[key] === val;
+        return obj[prop] === val;
       });
     },
 
-    findFirstByValue: function(set, key, val) {
-      let arr = this.findAllByValue(set, key, val);
+    findFirstByValue: function(set, prop, val) {
+      let arr = this.findAllByValue(set, prop, val);
       return arr.length > 0 ? arr[0] : null;
     },
 

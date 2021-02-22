@@ -1,9 +1,9 @@
 [Back to reference](../README.md)
 
-##### `map(value, low1, high1, low2, high2, clipping=false)`
+### `map(value, low1, high1, low2, high2, clipping=false)`
 Returns the given `value` mapped from the first range (`low1` to `high1`) to the second range (`low2` to `high2`). Note that the values `high1` or `high2` doesn't necessarily have to be higher than the values given by `low1` or `low2`. `clipping` set to true disallows `value` to be outside of the range `low1` - `high1`. 
 
-Examples:
+#### Examples:
 
 ```javascript
 // Map the value in the variable n from the range 1 to 3 into the range 0 to -10

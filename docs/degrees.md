@@ -1,9 +1,9 @@
 [Back to reference](../README.md)
 
-##### `degrees(rad)`
+### `degrees(rad)`
 Converts the radians angle value `rad` from the range -PI to PI in the range -180 to 180.
 
-Example:
+#### Example:
 
 The variable angle will contain 180.
 ```javascript

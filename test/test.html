@@ -52,8 +52,8 @@
   console.log(charactersGrouped);
 
   console.log("--------------------------------------");
-  console.log('charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Average"}, {value:"Total", method:"Average"}])');
-  let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Median"}, {value:"Total", method:"Average"}]);
+  console.log('charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Min"}, {value:"Height", method:"Percentile", p:0, title:"Perc0"}])');
+  let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Min"}, {value:"Height", method:"Percentile", p:0.25, title:"HeightQuartile1"}]);
   console.log(charactersCumulated);
 
 

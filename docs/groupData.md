@@ -1,10 +1,10 @@
 [Back to reference](../README.md)
 
-### `sortData(data, props)`
+### `groupData(data, props)`
 
-Sorts a data array by the given property names (keys). It returns a hierarchical object where all different values of the given properties are the new keys. Give `props` as an array of strings or just as a string if you have just one property for grouping.
+Groups a data array by the given property names (keys). It returns a hierarchical object where all different values of the given properties are the new keys. Give `props` as an array of strings or just as a string if you have just one property for grouping.
 
-If you have arrays as values of a given property the item will be put in all these groups (see example 2).
+If you have arrays as values of a given property the data object will be put in all these groups (see example 2).
 
 #### Example 1:
 
@@ -27,7 +27,7 @@ This will group `superheroes` by `Gender` and `Alignment`:
 let groupedSuperheroes = gmynd.groupData(superheroes, ['Gender', 'Alignment']);
 ```
 
-The result will be something like this where every `{…}` contains one of the original data items:
+The result will be something like this where every `{…}` contains one of the original data objects:
 ```javascript
 {
   Female: {
@@ -52,7 +52,7 @@ The result will be something like this where every `{…}` contains one of the o
 
 #### Example 2:
 
-Special case where the values of a property are arrays.
+Special case where the values of a property (here `genre`) are arrays.
 
 ```javascript
 let movies = [ 
