@@ -267,7 +267,6 @@ window.gmynd = (function() {
       return newData;
     },
 
-
     addPropPercentage: function(data, prop, keyName = prop + "Percentage") {
       let newData = [...data];
       const sum = this.dataSum(newData, prop);
@@ -304,11 +303,8 @@ window.gmynd = (function() {
       return newData;
     },
 
-    findAllByValue: function(set, prop, val) {
-      // taken from https://stackoverflow.com/a/13964186
-      // gibt ein Array derjenigen Objekte aus dem Array *set* zurück,
-      // die den Wert *val* für die Property *prop* haben
-      return set.filter(obj => {
+    findAllByValue: function(data, prop, val) {
+      return data.filter(obj => {
         return obj[prop] === val;
       });
     },

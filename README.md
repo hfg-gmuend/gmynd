@@ -41,7 +41,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`cumulateData(data, props, calculations = [])`](docs/cumulateData.md)
 - [`mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
 - [`intersectData(baseData, filterData, prop1, prop2 = prop1)`](docs/intersectData.md)
-
+- [`findAllByValue(data, prop, value)`](docs/findAllByValue.md)
 
 #### Array helpers
 
