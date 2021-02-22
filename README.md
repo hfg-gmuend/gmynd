@@ -17,8 +17,18 @@ let superheroes = [
   ...
 ]
 ```
+This kind of JSON is usually generated if you convert a CSV-file to JSON. The original CSV of the example above would look like this:
+```csv
+Name,Height,Weight
+A-Bomb,203,441
+Abe Sapien,191,65
+Abin Sur,185,90
+Abomination,203,441
+Absorbing Man,193,122
+...
+```
 
-
+We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properties or props and to the rows as data objects or entries.
 
 
 ---------------------------------
