@@ -56,7 +56,48 @@
   let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Min"}, {value:"Height", method:"Percentile", p:0.25, title:"HeightQuartile1"}]);
   console.log(charactersCumulated);
 
+  console.log("--------------------------------------");
+  console.log('convertedToNumber = gmynd.convertPropToNumber(stringNumbers, "test", false)');
+  const stringNumbers = [
+    {"test": "1"},
+    {"test": "2,2"},
+    {"test": "3.3"},
+    {"test": 4.4},
+    {"test": "5,555.55"},
+    {"test": "6 666,66"},
+    {"test": "test"},
+    {"test": [1, 2]},
+    {"test": {"test": 1}}];
+  let convertedToNumber = gmynd.convertPropToNumber(stringNumbers, "test", false);
+  console.log(convertedToNumber);
 
+  console.log("--------------------------------------");
+  console.log('convertedToBoolean = gmynd.convertPropToBoolean(boolVals, "test", true)');
+  const boolVals = [
+    {"test": "1"},
+    {"test": "2"},
+    {"test": "true"},
+    {"test": 1.0},
+    {"test": 1.1},
+    {"test": "yes"},
+    {"test": true},
+    {"test": "false"},
+    {"test": [true]},
+    {"test": {"test": true}}];
+  let convertedToBoolean = gmynd.convertPropToBoolean(boolVals, "test", true);
+  console.log(convertedToBoolean);
+
+  console.log("--------------------------------------");
+  console.log('typeChecked = gmynd.deleteDataWithWrongPropType(typeVals, "test", "Array")');
+  const typeVals = [
+    {"test": true},
+    {"test": 42},
+    {"test": 3.1452},
+    {"test": "Hello world"},
+    {"test": [1, 2, 3]},
+    {"test": {"test": true}}];
+  let typeChecked = gmynd.deleteDataWithWrongPropType(typeVals, "test", "String");
+  console.log(typeChecked);
 
 
   //gmynd.saveData(characters);
