@@ -9,6 +9,7 @@
   <script src="./superheroes/characters_small.js" type="text/javascript"></script>
   <script src="./ourworldindata/world_ages.js" type="text/javascript"></script>
   <script src="./ourworldindata/world_gender_ratio.js" type="text/javascript"></script>
+  <script src="./ourworldindata/country_locations.js" type="text/javascript"></script>
   <script src="../dist/gmynd.js" type="text/javascript"></script>
 </head>
 <body>
@@ -35,8 +36,10 @@
   console.log('charactersMerged = gmynd.mergeData(charactersInfo, charactersStats, "Name")');
   let charactersMerged = gmynd.mergeData(charactersInfo, charactersStats, "Name");
   console.log(charactersMerged);
-  console.log('worldDataMerged = gmynd.mergeData(worldAges, worldGenderRatio, ["Code", "Year"])');
-  let worldDataMerged = gmynd.mergeData(worldAges, worldGenderRatio, ["Code", "Year"]);
+  console.log('worldDataMerged = gmynd.mergeData(worldAges, countyLocations, "Code", "ISO-ALPHA-3")');
+  let worldDataMerged = gmynd.mergeData(worldAges, countryLocations, "Code", "ISO-ALPHA-3");
+  console.log('worldDataMerged = gmynd.mergeData(worldDataMerged, worldGenderRatio, ["Code", "Year"])');
+  worldDataMerged = gmynd.mergeData(worldDataMerged, worldGenderRatio, ["Code", "Year"]);
   console.log(worldDataMerged);
 
   console.log("--------------------------------------");
