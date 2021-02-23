@@ -124,29 +124,46 @@ window.gmynd = (function() {
       }
     },
 
-    mergeData: function(data1, data2, prop1, prop2 = prop1) {
-      // Kombiniert zwei Objekt-Arrays anhand einer oder zwei Identifier-Properties
-      // nur Elemente, die in beiden Arrays gefunden werden, werden im Ergebnis-Array übernommen
+    mergeData: function(data1, data2, props1, props2 = props1) {
+      if (!this.isArray(props1)) props1 = [props1];
+      if (!this.isArray(props2)) props2 = [props2];
+      if (props1.length != props2.length) {
+        console.error('The third and the fourth argument have to be arrays of the same length!');
+        return false;
+      }
+
+      // Combines two arrays of objects comparing some properties. Only elements found in both arrays
+      // will be copied to the result.
       let mergedData = [];
       data1.forEach(firstArrayElement => {
         let newEntry = Object.assign({}, firstArrayElement);
-        data2.forEach(secondArrayElement => {
-          if (firstArrayElement[prop1] === secondArrayElement[prop2]) {
+
+        let foundSomething = data2.some(secondArrayElement => {
+          let success = true;
+          for (let i = 0; i < props1.length; i++) {
+            if (firstArrayElement[props1[i]] !== secondArrayElement[props2[i]]) {
+              success = false;
+            }
+          }
+          // if elements with same value(s) are found, copy properties from second to first.
+          if (success) {
             for (let property in secondArrayElement) {
               if (secondArrayElement.hasOwnProperty(property)) {
                 newEntry[property] = secondArrayElement[property];
               }
             }
           }
-
+          return success;
         });
-        mergedData.push(newEntry);
+
+        if (foundSomething) mergedData.push(newEntry);
       });
+
       return mergedData;
     },
 
     intersectData: function(baseData, filterData, prop1, prop2 = prop1) {
-      // returns JSON elements matching second JSON
+      // returns a filtered version of baseData where only elements are kept that are found in filterData
       let newData = [];
       baseData.forEach((baseElement, i) => {
         let takeElement = false;

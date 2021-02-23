@@ -1,7 +1,7 @@
 // Shortened version from https://ourworldindata.org/gender-ratio
 // "FemalePerc" is the percentage of female people in the population
 
-let world_gender_ratio = [
+let worldGenderRatio = [
   {
     "Entity": "Afghanistan",
     "Code": "AFG",

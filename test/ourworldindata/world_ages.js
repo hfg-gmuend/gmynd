@@ -1,7 +1,7 @@
 // Shortened version from https://ourworldindata.org/age-structure
 // Age numbers in thousand people
 
-let world_ages = [
+let worldAges = [
   {
     "Entity": "Aruba",
     "Code": "ABW",
