@@ -42,7 +42,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
 - [`intersectData(baseData, filterData, prop1, prop2 = prop1)`](docs/intersectData.md)
 - [`findAllByValue(data, prop, val)`](docs/findAllByValue.md)
-- [`findFirstByValue(data, prop, val)`](docs/findAllByValue.md)
+- [`findFirstByValue(data, prop, val)`](docs/findFirstByValue.md)
 
 #### Array helpers
 
