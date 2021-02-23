@@ -135,6 +135,7 @@ window.gmynd = (function() {
       // Combines two arrays of objects comparing some properties. Only elements found in both arrays
       // will be copied to the result.
       let mergedData = [];
+      let notFoundData = [];
       data1.forEach(firstArrayElement => {
         let newEntry = Object.assign({}, firstArrayElement);
 
@@ -156,9 +157,17 @@ window.gmynd = (function() {
           return success;
         });
 
-        if (foundSomething) mergedData.push(newEntry);
+        if (foundSomething) {
+          mergedData.push(newEntry);
+        } else {
+          notFoundData.push(newEntry);
+        }
       });
 
+      if (notFoundData.length > 0 ) {
+        console.warn("Could not find matches for these entries:")
+        console.warn(notFoundData);
+      }
       return mergedData;
     },
 
