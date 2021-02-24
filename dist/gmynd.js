@@ -318,7 +318,7 @@ window.gmynd = (function() {
 
     addPropRank: function(data, prop, keyName = prop + "Rank") {
       let newData = [...data];
-      newData.sort(this.dynamicSort(prop));
+      this.sortData(newData, prop);
       let i = 0;
       newData.forEach(obj => {
         if (obj.hasOwnProperty(prop)) {
