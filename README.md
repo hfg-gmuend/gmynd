@@ -42,7 +42,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`mergeData(data1, data2, prop1, prop2 = prop1) -> newData`](docs/mergeData.md)
 - `intersectData(baseData, filterData, prop1, prop2 = prop1) -> newData`
 - [`findAllByValue(data, prop, val)` -> newData](docs/findAllByValue.md)
-- [`object     = findFirstByValue(data, prop, val)` -> object](docs/findFirstByValue.md)
+- [`findFirstByValue(data, prop, val)` -> object](docs/findFirstByValue.md)
 - `deleteIncompleteData(data, props) -> newData`
 - `deleteDuplicateData(data, prop, keepFirst = true) -> newData`
 - `deleteDataWithWrongPropType(data, prop, allowedType) -> newData`
@@ -54,12 +54,12 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `arrayFromProps(obj, props, fallbackVal = null)`
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
 - `deleteProps(obj, props)`
-- `deletePropsInData(arr, props)`
-- `dataMax(arr, prop) -> number`
-- `dataMin(arr, prop) -> number`
-- `dataSum(arr, prop) -> number`
-- `dataExtremes(arr, prop) -> object`
-- `saveData(arr, pretty = true)`
+- `deletePropsInData(data, props)`
+- `dataMax(data, prop) -> number`
+- `dataMin(data, prop) -> number`
+- `dataSum(data, prop) -> number`
+- `dataExtremes(data, prop) -> object`
+- `saveData(data, pretty = true)`
 
 
 #### Array helpers

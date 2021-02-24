@@ -335,34 +335,34 @@ window.gmynd = (function() {
       });
     },
 
-    findFirstByValue: function(set, prop, val) {
-      let arr = this.findAllByValue(set, prop, val);
+    findFirstByValue: function(data, prop, val) {
+      let arr = this.findAllByValue(data, prop, val);
       return arr.length > 0 ? arr[0] : null;
     },
 
-    dataMax: function(arr, prop) {
-      // gibt das Maximum der Property *prop* aller Objekte im Array *arr* zurück.
-      return Math.max.apply(Math, arr.map(function(obj) {
+    dataMax: function(data, prop) {
+      // gibt das Maximum der Property *prop* aller Objekte im Array *data* zurück.
+      return Math.max.apply(Math, data.map(function(obj) {
         return obj[prop] ? obj[prop] : -Infinity;
       }));
     },
 
-    dataMin: function(arr, prop) {
-      // gibt das Maximum der Property *prop* aller Objekte im Array *arr* zurück.
-      return Math.min.apply(Math, arr.map(function(obj) {
+    dataMin: function(data, prop) {
+      // gibt das Maximum der Property *prop* aller Objekte im Array *data* zurück.
+      return Math.min.apply(Math, data.map(function(obj) {
         return obj[prop] ? obj[prop] : Infinity;
       }))
     },
 
-    dataSum: function(arr, prop) {
+    dataSum: function(data, prop) {
       //taken from https://stackoverflow.com/a/23247980
-      return arr.reduce((a, b) => a + (b[prop] || 0), 0);
+      return data.reduce((a, b) => a + (b[prop] || 0), 0);
     },
 
-    dataExtremes: function(arr, prop) {
+    dataExtremes: function(data, prop) {
       return {
-        "min": this.dataMin(arr, prop),
-        "max": this.dataMax(arr, prop)
+        "min": this.dataMin(data, prop),
+        "max": this.dataMax(data, prop)
       };
     },
 
@@ -393,19 +393,19 @@ window.gmynd = (function() {
       });
     },
 
-    deletePropsInData: function(arr, props) {
+    deletePropsInData: function(data, props) {
       if (!this.isArray(props)) props = [props];
-      arr.forEach(el => {
+      data.forEach(el => {
         props.forEach(prop => {
           delete el[prop];
         });
       });
     },
 
-    sortData: function(arr, props) {
+    sortData: function(data, props) {
       // Variation from https://stackoverflow.com/a/4760279
       if (!this.isArray(props)) props = [props];
-      return arr.sort((a, b) => {
+      return data.sort((a, b) => {
         let result = 0;
         for (let i = 0; i < props.length; i++) {
           let prop = props[i];
@@ -474,8 +474,8 @@ window.gmynd = (function() {
       }
     },
 
-    saveData: function(arr, pretty = true) {
-      let c = JSON.stringify(arr);
+    saveData: function(data, pretty = true) {
+      let c = JSON.stringify(data);
       if (pretty) c = c.replaceAll('}', '\n}');
       if (pretty) c = c.replaceAll('{', '{\n\t');
       if (pretty) c = c.replaceAll(',"', ',\n\t"');
