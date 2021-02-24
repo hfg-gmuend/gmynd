@@ -37,58 +37,58 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 #### Data manipulation
 
 - [`sortData(data, props)`](docs/sortData.md)
-- [`newObject  = groupData(data, props)`](docs/groupData.md)
-- [`newData    = cumulateData(data, props, calculations = [])`](docs/cumulateData.md)
-- [`newData    = mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
-- `newData    = intersectData(baseData, filterData, prop1, prop2 = prop1)`
-- [`newData    = findAllByValue(data, prop, val)`](docs/findAllByValue.md)
-- [`object     = findFirstByValue(data, prop, val)`](docs/findFirstByValue.md)
-- `newData    = deleteIncompleteData(data, props)`
-- `newData    = deleteDuplicateData(data, prop, keepFirst = true)`
-- `newData    = deleteDataWithWrongPropType(data, prop, allowedType)`
-- `newData    = convertPropToNumber(data, prop, nullNaNs = true)`
-- `newData    = convertPropToBoolean(data, prop, strictMode = false)`
-- `newData    = addPropPercentage(data, prop, keyName = prop + "Percentage")`
-- `newData    = addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null)`
-- `newData    = addPropRank(data, prop, keyName = prop + "Rank")`
+- [`groupData(data, props) -> newObject`](docs/groupData.md)
+- [`cumulateData(data, props, calculations = []) -> newData`](docs/cumulateData.md)
+- [`mergeData(data1, data2, prop1, prop2 = prop1) -> newData`](docs/mergeData.md)
+- `intersectData(baseData, filterData, prop1, prop2 = prop1) -> newData`
+- [`findAllByValue(data, prop, val)` -> newData](docs/findAllByValue.md)
+- [`object     = findFirstByValue(data, prop, val)` -> object](docs/findFirstByValue.md)
+- `deleteIncompleteData(data, props) -> newData`
+- `deleteDuplicateData(data, prop, keepFirst = true) -> newData`
+- `deleteDataWithWrongPropType(data, prop, allowedType) -> newData`
+- `convertPropToNumber(data, prop, nullNaNs = true) -> newData`
+- `convertPropToBoolean(data, prop, strictMode = false) -> newData`
+- `addPropPercentage(data, prop, keyName = prop + "Percentage") -> newData`
+- `addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) -> newData`
+- `addPropRank(data, prop, keyName = prop + "Rank") -> newData`
 - `arrayFromProps(obj, props, fallbackVal = null)`
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
 - `deleteProps(obj, props)`
 - `deletePropsInData(arr, props)`
-- `number     = dataMax(arr, prop)`
-- `number     = dataMin(arr, prop)`
-- `number     = dataSum(arr, prop)`
-- `object     = dataExtremes(arr, prop)`
+- `dataMax(arr, prop) -> number`
+- `dataMin(arr, prop) -> number`
+- `dataSum(arr, prop) -> number`
+- `dataExtremes(arr, prop) -> object`
 - `saveData(arr, pretty = true)`
 
 
 #### Array helpers
 
-- `number     = arraySum(arr)`
-- `number     = arrayCount(array, val)`
-- `number     = arrayAverage(arr, ignoreEmpty = false)`
-- `someValue  = arrayLast(arr, noEmptyValues = false)`
+- `number     = arraySum(arr) -> number`
+- `number     = arrayCount(array, val) -> number`
+- `number     = arrayAverage(arr, ignoreEmpty = false) -> number`
+- `someValue  = arrayLast(arr, noEmptyValues = false) -> someValue`
 - `shuffleArray(arr)`
 
 
 #### Math and utilities
 
-- [`number     = map(value, low1, high1, low2, high2, clipping=false)`](docs/map.md)
-- [`number     = lerp(value1, value2, t)`](docs/lerp.md)
-- [`number     = clip(val, min, max)`](docs/clip.md)
-- [`number     = random(low, high)`](docs/random.md)
-- [`number     = randomInt(low, high)`](docs/randomInt.md)
-- [`number     = radians(deg)`](docs/radians.md)
-- [`number     = degrees(rad)`](docs/degrees.md)
-- [`number     = distance(x1, y1, x2, y2)`](docs/distance.md)
-- [`object     = cartesian(radius, angle)`](docs/cartesian.md)
-- [`object     = polar(x, y)`](docs/polar.md)
-- [`number     = circleRadius(area)`](docs/circleRadius.md)
-- [`number     = circleArea(radius)`](docs/circleArea.md)
-- `number     = getDuration(date1, date2)`
-- [`boolean    = isString(value)`](docs/isString.md)
-- `boolean    = isArray(val)`
-- `boolean    = isObject(val)`
+- [`map(value, low1, high1, low2, high2, clipping=false) -> number`](docs/map.md)
+- [`lerp(value1, value2, t) -> number`](docs/lerp.md)
+- [`clip(val, min, max) -> number`](docs/clip.md)
+- [`random(low, high) -> number`](docs/random.md)
+- [`randomInt(low, high) -> number`](docs/randomInt.md)
+- [`radians(deg) -> number`](docs/radians.md)
+- [`degrees(rad) -> number`](docs/degrees.md)
+- [`distance(x1, y1, x2, y2) -> number`](docs/distance.md)
+- [`cartesian(radius, angle) -> object`](docs/cartesian.md)
+- [`polar(x, y) -> object`](docs/polar.md)
+- [`circleRadius(area) -> number`](docs/circleRadius.md)
+- [`circleArea(radius) -> number`](docs/circleArea.md)
+- `getDuration(date1, date2) -> number`
+- [`isString(value) -> boolean`](docs/isString.md)
+- `isArray(val) -> boolean`
+- `isObject(val) -> boolean`
 
 ---------------------------------
 Suggestions? Bugs? File an issue! :)
