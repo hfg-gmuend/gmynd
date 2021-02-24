@@ -75,11 +75,11 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 
 - [`map(value, low1, high1, low2, high2, clipping=false) -> number`](docs/map.md)
 - [`lerp(value1, value2, t) -> number`](docs/lerp.md)
-- [`clip(val, min, max) -> number`](docs/clip.md)
+- [`clip(value, min, max) -> number`](docs/clip.md)
 - [`random(low, high) -> number`](docs/random.md)
 - [`randomInt(low, high) -> number`](docs/randomInt.md)
-- [`radians(deg) -> number`](docs/radians.md)
-- [`degrees(rad) -> number`](docs/degrees.md)
+- [`radians(degree) -> number`](docs/radians.md)
+- [`degrees(radians) -> number`](docs/degrees.md)
 - [`distance(x1, y1, x2, y2) -> number`](docs/distance.md)
 - [`cartesian(radius, angle) -> object`](docs/cartesian.md)
 - [`polar(x, y) -> object`](docs/polar.md)
@@ -87,8 +87,8 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`circleArea(radius) -> number`](docs/circleArea.md)
 - `getDuration(date1, date2) -> number`
 - [`isString(value) -> boolean`](docs/isString.md)
-- `isArray(val) -> boolean`
-- `isObject(val) -> boolean`
+- [`isArray(value) -> boolean`](docs/isArray.md)
+- [`isObject(value) -> boolean`](docs/isObject.md)
 
 ---------------------------------
 Suggestions? Bugs? File an issue! :)
