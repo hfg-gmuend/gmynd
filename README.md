@@ -41,17 +41,13 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`cumulateData(data, props, calculations = [])`](docs/cumulateData.md)
 - [`mergeData(data1, data2, prop1, prop2 = prop1)`](docs/mergeData.md)
 - `intersectData(baseData, filterData, prop1, prop2 = prop1)`
-
 - [`findAllByValue(data, prop, val)`](docs/findAllByValue.md)
 - [`findFirstByValue(data, prop, val)`](docs/findFirstByValue.md)
-
 - `deleteIncompleteData(data, props)`
 - `deleteDuplicateData(data, prop, keepFirst = true)`
 - `deleteDataWithWrongPropType(data, prop, allowedType)`
-
 - `convertPropToNumber(data, prop, nullNaNs = true)`
 - `convertPropToBoolean(data, prop, strictMode = false)`
-
 - `addPropPercentage(data, prop, keyName = prop + "Percentage")`
 - `addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null)`
 - `addPropRank(data, prop, keyName = prop + "Rank")`
@@ -59,12 +55,10 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
 - `deleteProps(obj, props)`
 - `deletePropsInData(arr, props)`
-
 - `dataMax(arr, prop)`
 - `dataMin(arr, prop)`
 - `dataSum(arr, prop)`
 - `dataExtremes(arr, prop)`
-
 - `saveData(arr, pretty = true)`
 
 
@@ -92,7 +86,6 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`circleRadius(area)`](docs/circleRadius.md)
 - [`circleArea(radius)`](docs/circleArea.md)
 - `getDuration(date1, date2)`
-
 - [`isString(value)`](docs/isString.md)
 - `isArray(val)`
 - `isObject(val)`
