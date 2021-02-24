@@ -377,13 +377,13 @@ window.gmynd = (function() {
       return propArr;
     },
 
-    arrayFromPropsInData: function(arr, props, propName, deleteProps = true, fallbackVal = null) {
+    arrayFromPropsInData: function(data, props, propName, deleteProps = true, fallbackVal = null) {
       // does arrayFromProps() for every object inside a given JSON. returns the JSON.
-      arr.forEach(el => {
+      data.forEach(el => {
         el[propName] = this.arrayFromProps(el, props, fallbackVal);
         if (deleteProps) this.deleteProps(el, props);
       });
-      return arr;
+      return data;
     },
 
     deleteProps: function(obj, props) {
