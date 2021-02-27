@@ -34,4 +34,4 @@ This is the result:
   {min: 165, max: 191}
 ```
 
-See also: [`dataMin(data, prop) -> number`](docs/dataMin.md), [`dataMax(data, prop) -> number`](docs/dataMax.md)
+See also: [`dataMin(data, prop) -> number`](dataMin.md), [`dataMax(data, prop) -> number`](dataMax.md)

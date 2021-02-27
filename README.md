@@ -53,8 +53,8 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `addPropRank(data, prop, keyName = prop + "Rank") -> newData`
 - `arrayFromProps(obj, props, fallbackVal = null)`
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
-- `deleteProps(obj, props)`
-- `deletePropsInData(data, props)`
+- [`deleteProps(obj, props)`](docs/deleteProps.md)
+- [`deletePropsInData(data, props)`](docs/deletePropsInData.md)
 - [`dataMin(data, prop) -> number`](docs/dataMin.md)
 - [`dataMax(data, prop) -> number`](docs/dataMax.md)
 - [`dataExtremes(data, prop) -> object`](docs/dataExtremes.md)
