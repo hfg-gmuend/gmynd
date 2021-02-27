@@ -107,6 +107,13 @@
   let typeChecked = gmynd.deleteDataWithWrongPropType(typeVals, "test", "String");
   console.log(typeChecked);
 
+  console.log("--------------------------------------");
+  console.log('duration = gmynd.duration(start, end)');
+  const start = new Date(1939, 8, 1);
+  const end = new Date(1945, 8, 2);
+  let duration = gmynd.duration(start, end);
+  console.log(duration);
+
 
   //gmynd.saveData(characters);
 

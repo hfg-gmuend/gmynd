@@ -85,7 +85,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`polar(x, y) -> object`](docs/polar.md)
 - [`circleRadius(area) -> number`](docs/circleRadius.md)
 - [`circleArea(radius) -> number`](docs/circleArea.md)
-- `getDuration(date1, date2) -> number`
+- [`duration(date1, date2) -> number`](docs/duration.md)
 - [`isString(value) -> boolean`](docs/isString.md)
 - [`isArray(value) -> boolean`](docs/isArray.md)
 - [`isObject(value) -> boolean`](docs/isObject.md)

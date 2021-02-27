@@ -628,8 +628,8 @@ window.gmynd = (function() {
     // DATE FUNCTIONS
     // ==============
 
-    getDuration: function(date1, date2) {
-      return Math.abs(Date.parse(date1) - Date.parse(date2));
+    duration: function(date1, date2) {
+      return Date.parse(date2) - Date.parse(date1);
     },
 
   }
