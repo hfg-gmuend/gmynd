@@ -43,7 +43,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `intersectData(baseData, filterData, prop1, prop2 = prop1) -> newData`
 - [`findAllByValue(data, prop, val) -> newData`](docs/findAllByValue.md)
 - [`findFirstByValue(data, prop, val) -> object`](docs/findFirstByValue.md)
-- `deleteIncompleteData(data, props) -> newData`
+- [`deleteIncompleteData(data, props) -> newData`](docs/deleteIncompleteData.md)
 - `deleteDuplicateData(data, prop, keepFirst = true) -> newData`
 - `deleteDataWithWrongPropType(data, prop, allowedType) -> newData`
 - `convertPropToNumber(data, prop, nullNaNs = true) -> newData`
@@ -55,10 +55,10 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
 - `deleteProps(obj, props)`
 - `deletePropsInData(data, props)`
-- `dataMax(data, prop) -> number`
-- `dataMin(data, prop) -> number`
+- [`dataMin(data, prop) -> number`](docs/dataMin.md)
+- [`dataMax(data, prop) -> number`](docs/dataMax.md)
+- [`dataExtremes(data, prop) -> object`](docs/dataExtremes.md)
 - `dataSum(data, prop) -> number`
-- `dataExtremes(data, prop) -> object`
 - `saveData(data, pretty = true)`
 
 
