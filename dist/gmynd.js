@@ -488,7 +488,7 @@ window.gmynd = (function() {
 
     arraySum: function(arr) {
       //taken from https://stackoverflow.com/a/3762623
-      return arr.reduce((pv, cv) => parseInt(pv) + parseInt(cv), 0);
+      return arr.reduce((pv, cv) => Number(pv) + Number(cv), 0);
     },
 
     arrayCount: function(array, val) {

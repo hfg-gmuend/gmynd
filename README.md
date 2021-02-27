@@ -64,10 +64,10 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 
 #### Array helpers
 
-- `number     = arraySum(arr) -> number`
-- `number     = arrayCount(array, val) -> number`
-- `number     = arrayAverage(arr, ignoreEmpty = false) -> number`
-- `someValue  = arrayLast(arr, noEmptyValues = false) -> someValue`
+- [`arraySum(arr) -> number`](docs/arraySum.md)
+- [`arrayCount(array, val) -> number`](docs/arrayCount.md)
+- `arrayAverage(arr, ignoreEmpty = false) -> number`
+- `arrayLast(arr, noEmptyValues = false) -> someValue`
 - `shuffleArray(arr)`
 
 

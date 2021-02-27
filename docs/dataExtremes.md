@@ -27,11 +27,10 @@ This will find and return the extreme values for `Height` of all objects in `sup
 let extremes = gmynd.dataExtremes(superheroes, "Height");
 ```
 
-
 This is the result:
 
 ```javascript
-  {min: 165, max: 191}
+{min: 165, max: 191}
 ```
 
 See also: [`dataMin(data, prop) -> number`](dataMin.md), [`dataMax(data, prop) -> number`](dataMax.md)

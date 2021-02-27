@@ -22,7 +22,7 @@ let superheroes = [
 This will find and return the biggest `Height` of all objects in `superheroes`:
 
 ```javascript
-let highest = gmynd.dataMin(superheroes, "Height");
+let highest = gmynd.dataMax(superheroes, "Height");
 
 // returns: 191
 ```
