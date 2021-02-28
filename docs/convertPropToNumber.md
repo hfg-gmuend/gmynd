@@ -3,7 +3,7 @@
 ### `convertPropToNumber(data, prop, nullNaNs = true)`
 
 Converts every value of a given property `prop` in every object in `data` to a numeric value and returns a copy
-of `data` where the original values are overwritten with the numeric values. If `nullNaNs` is set to `true` (default
+of `data` where the original values are overwritten with the new values. If `nullNaNs` is set to `true` (default
 value), every value which cannot be cast as a number is set to `null`. If `nullNaNs` is set to `false`, the original
 value is kept in these cases.
 

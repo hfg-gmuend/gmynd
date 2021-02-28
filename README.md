@@ -47,7 +47,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `deleteDuplicateData(data, prop, keepFirst = true) -> newData`
 - `deleteDataWithWrongPropType(data, prop, allowedType) -> newData`
 - [`convertPropToNumber(data, prop, nullNaNs = true) -> newData`](docs/convertPropToNumber.md)
-- `convertPropToBoolean(data, prop, strictMode = false) -> newData`
+- [`convertPropToBoolean(data, prop, strictMode = false) -> newData`](docs/convertPropToBoolean.md)
 - `addPropPercentage(data, prop, keyName = prop + "Percentage") -> newData`
 - `addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) -> newData`
 - `addPropRank(data, prop, keyName = prop + "Rank") -> newData`
