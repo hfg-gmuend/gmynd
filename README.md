@@ -66,8 +66,8 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 
 - [`arraySum(arr) -> number`](docs/arraySum.md)
 - [`arrayCount(arr, val) -> number`](docs/arrayCount.md)
-- `arrayAverage(arr, ignoreEmpty = false) -> number`
-- `arrayLast(arr, ignoreEmpty = false) -> someValue`
+- [`arrayAverage(arr, ignoreEmpty = false) -> number`](docs/arrayAverage.md)
+- [`arrayLast(arr, ignoreEmpty = false) -> someValue`](docs/arrayLast.md)
 - `shuffleArray(arr)`
 
 

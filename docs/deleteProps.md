@@ -14,10 +14,13 @@ let supergirl = {Name: "Supergirl", Alignment: "good", Gender: "Female", Height:
 ```
 
 This will delete the properties `Height` and `Weight`:
+
 ```javascript
-gmynd.deleteProps(supergirl,["Height", "Weight"]);
+gmynd.deleteProps(supergirl, ["Height", "Weight"]);
 ```
+
 supergirl now looks like this:
+
 ```
 {Name: "Supergirl", Alignment: "good", Gender: "Female"}
 ```

@@ -1,6 +1,7 @@
 [Back to reference](../README.md)
 
 ### `dataMin(data, prop)`
+
 Finds the smallest numeric value of a given property `prop` in all objects in `data` and returns it.
 
 #### Example:

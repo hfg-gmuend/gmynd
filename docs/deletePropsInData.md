@@ -24,8 +24,9 @@ let superheroes = [
 ```
 
 This will delete the properties `Height` and `Weight` from every object in `data`:
+
 ```javascript
-gmynd.deletePropsInData(superheroes,["Height", "Weight"]);
+gmynd.deletePropsInData(superheroes, ["Height", "Weight"]);
 ```
 
 This is the result:

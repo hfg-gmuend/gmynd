@@ -1,6 +1,7 @@
 [Back to reference](../README.md)
 
 ### `dataMax(data, prop)`
+
 Finds the highest numeric value of a given property `prop` in all objects in `data` and returns it.
 
 #### Example:
