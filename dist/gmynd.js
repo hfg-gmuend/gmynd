@@ -221,28 +221,28 @@ window.gmynd = (function () {
 
     deleteDataWithWrongPropType: function (data, prop, allowedType) {
       // other name suggestion: filterPropType()
-      // possible Inputs: "Boolean", "Integer", "Number", "String", "Array", "Object"
+      allowedType = allowedType.trim().toLocaleLowerCase();
       let newData = [...data];
       for (let i = 0; i < newData.length; i++) {
         let val = newData[i][prop];
         let keep;
         switch (allowedType) {
-          case "Boolean":
+          case "boolean":
             keep = typeof val === "boolean";
             break;
-          case "Integer":
+          case "integer":
             keep = parseInt(val) === val && !isNaN(val);
             break;
-          case "Number":
+          case "number":
             keep = Number(val) === val && !isNaN(val);
             break;
-          case "String":
+          case "string":
             keep = this.isString(val);
             break;
-          case "Array":
+          case "array":
             keep = this.isArray(val);
             break;
-          case "Object":
+          case "object":
             keep = this.isObject(val);
             break;
           default:
