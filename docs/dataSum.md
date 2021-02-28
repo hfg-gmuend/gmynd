@@ -23,3 +23,5 @@ let heightSum = gmynd.dataSum(superheroes, "Height");
 
 // 170 + 165 + 191 = 526
 ```
+
+Credits: [bottens](https://stackoverflow.com/a/23247980)

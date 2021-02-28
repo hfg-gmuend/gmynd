@@ -275,8 +275,6 @@ window.gmynd = (function() {
     },
 
     convertPropToBoolean: function(data, prop, strictMode = false) {
-      // with strictMode off, all values >=1 are set to true, all others to false
-      // generally, everything this function doesn't recognize as true is set to false
       let newData = [...data];
       const trueStrings = ["1", "true", "yes", "+", "wahr", "ja"];
       newData.forEach(obj => {
@@ -341,21 +339,18 @@ window.gmynd = (function() {
     },
 
     dataMax: function(data, prop) {
-      // gibt das Maximum der Property *prop* aller Objekte im Array *data* zurück.
       return Math.max.apply(Math, data.map(function(obj) {
         return obj[prop] ? obj[prop] : -Infinity;
       }));
     },
 
     dataMin: function(data, prop) {
-      // gibt das Maximum der Property *prop* aller Objekte im Array *data* zurück.
       return Math.min.apply(Math, data.map(function(obj) {
         return obj[prop] ? obj[prop] : Infinity;
       }))
     },
 
     dataSum: function(data, prop) {
-      //taken from https://stackoverflow.com/a/23247980
       return data.reduce((a, b) => a + (b[prop] || 0), 0);
     },
 
@@ -552,17 +547,11 @@ window.gmynd = (function() {
     },
 
     map: function(val, low1, high1, low2, high2, clipping = false) {
-      // converts a value from one range of values to another
-      // clipping disallows val to be outside of low1-high1
-      if (clipping) {
-        if (val < low1) val = low1;
-        if (val > high1) val = high1;
-      }
+      if (clipping) val = this.clip(val, low1, high1);
       return (val - low1) / (high1 - low1) * (high2 - low2) + low2;
     },
 
     random: function(low, high) {
-      // returns random value inside a given value range
       if (arguments.length === 0) {
         low = 0;
         high = 1;
@@ -585,7 +574,6 @@ window.gmynd = (function() {
     },
 
     circleRadius: function(area) {
-      //returns circle radius of given circle area
       return Math.sqrt(area / Math.PI);
     },
 
