@@ -51,7 +51,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - `addPropPercentage(data, prop, keyName = prop + "Percentage") -> newData`
 - `addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) -> newData`
 - `addPropRank(data, prop, keyName = prop + "Rank") -> newData`
-- `arrayFromProps(obj, props, fallbackVal = null)`
+- [`arrayFromProps(obj, props, fallbackVal = null)`](docs/arrayFromProps.md)
 - `arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null)`
 - [`deleteProps(obj, props)`](docs/deleteProps.md)
 - [`deletePropsInData(data, props)`](docs/deletePropsInData.md)

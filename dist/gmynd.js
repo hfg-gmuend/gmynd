@@ -362,8 +362,6 @@ window.gmynd = (function () {
     },
 
     arrayFromProps: function (obj, props, fallbackVal = null) {
-      // puts the values of all given properties of an object into an array and returns that array.
-      // useful e.g. when data over time is given like the yearly gdp of a country.
       let propArr = [];
       props.forEach(prop => {
         propArr.push(obj.hasOwnProperty(prop) ?
