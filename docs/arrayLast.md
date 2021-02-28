@@ -2,7 +2,7 @@
 
 ### `arrayLast(arr, ignoreEmpty = false)`
 
-Returns the last element of an array `arr`. if `ignoreEmpty` is set to `false` (standard value), the last element in the
+Returns the last element of an array `arr`. if `ignoreEmpty` is set to `false` (default value), the last element in the
 array can be `null`, `undefined` or `""`. If `ignoreEmpty` is set to `true`, it returns the last element in the array
 that is _not_ `null`, `undefined` or `""`.
 

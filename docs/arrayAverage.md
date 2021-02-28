@@ -3,7 +3,7 @@
 ### `arrayAverage(arr, ignoreEmpty = false)`
 
 Calculates the average value of all elements in an array of numbers `arr`. If the optional argument `ignoreEmpty` is set
-to `false` (standard value), invalid numerical values in the array are regarded as `0`. If `ignoreEmpty` is set
+to `false` (default value), invalid numerical values in the array are regarded as `0`. If `ignoreEmpty` is set
 to `true`, the average is calculated only among all valid numerical values.
 
 **Note:** Valid numerical values are all values that can be cast to a `Number`. E.g. the array `[1, 2]` is invalid while

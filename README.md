@@ -46,7 +46,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`deleteIncompleteData(data, props) -> newData`](docs/deleteIncompleteData.md)
 - `deleteDuplicateData(data, prop, keepFirst = true) -> newData`
 - `deleteDataWithWrongPropType(data, prop, allowedType) -> newData`
-- `convertPropToNumber(data, prop, nullNaNs = true) -> newData`
+- [`convertPropToNumber(data, prop, nullNaNs = true) -> newData`](docs/convertPropToNumber.md)
 - `convertPropToBoolean(data, prop, strictMode = false) -> newData`
 - `addPropPercentage(data, prop, keyName = prop + "Percentage") -> newData`
 - `addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) -> newData`
@@ -68,7 +68,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`arrayCount(arr, val) -> number`](docs/arrayCount.md)
 - [`arrayAverage(arr, ignoreEmpty = false) -> number`](docs/arrayAverage.md)
 - [`arrayLast(arr, ignoreEmpty = false) -> someValue`](docs/arrayLast.md)
-- [`shuffleArray(arr)`](docs/shuffleArray.md)
+- [`shuffleArray(arr) -> array`](docs/shuffleArray.md)
 
 
 #### Math and utilities
