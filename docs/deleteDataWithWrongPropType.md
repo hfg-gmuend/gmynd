@@ -3,7 +3,7 @@
 ### `deleteDataWithWrongPropType(data, prop, allowedType)`
 
 Filters all objects in `data` by checking if the value of a given property `prop` in each element is of the correct data
-type. `allowedType` works with any string from the following list:
+type. `allowedType` works with any string from the following list (case-insensitive):
 
 ```
 "Boolean", "Integer", "Number", "String", "Array", "Object"
