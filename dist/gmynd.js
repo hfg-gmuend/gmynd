@@ -299,7 +299,7 @@ window.gmynd = (function () {
       return newData;
     },
 
-    addPropSegment: function (data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) {
+    addPropSegment: function (data, prop, segmentCount, start = null, end = null, propName = prop + "SegmentOf" + segmentCount) {
       let newData = [...data];
       const range = {
         start: start ? start : this.dataMin(data, prop),
@@ -307,8 +307,8 @@ window.gmynd = (function () {
       };
       const segmentSize = Math.abs(range.end - range.start) / segmentCount;
       newData.forEach(obj => {
-        obj[keyName] = Math.floor(obj[prop] / segmentSize);
-        if (obj[keyName] >= segmentCount) obj[keyName] = segmentCount - 1;
+        obj[propName] = Math.floor((obj[prop] - range.start) / segmentSize);
+        if (obj[propName] >= segmentCount) obj[propName] = segmentCount - 1;
       });
       return newData;
     },

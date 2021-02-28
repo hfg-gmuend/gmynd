@@ -9,8 +9,6 @@ strings representing the properties to be deleted. Nothing is returned, the func
 
 If you have data like this:
 
-If you have data like this:
-
 ```javascript
 let superheroes = [
   {Name: "Steppenwolf", Alignment: "bad", Gender: "Male", Height: 183, Weight: 91},

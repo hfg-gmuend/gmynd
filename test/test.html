@@ -61,7 +61,10 @@
 
   console.log("--------------------------------------");
   console.log('charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Min"}, {value:"Height", method:"Percentile", p:0, title:"Perc0"}])');
-  let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{value:"Height", method:"Min"}, {value:"Height", method:"Percentile", p:0.25, title:"HeightQuartile1"}]);
+  let charactersCumulated = gmynd.cumulateData(charactersFiltered, "Alignment", [{
+    value: "Height",
+    method: "Min"
+  }, {value: "Height", method: "Percentile", p: 0.25, title: "HeightQuartile1"}]);
   console.log(charactersCumulated);
 
   console.log("--------------------------------------");
@@ -113,6 +116,21 @@
   const end = new Date(1945, 8, 2);
   let duration = gmynd.duration(start, end);
   console.log(duration);
+
+  console.log("--------------------------------------");
+  console.log('let segmentedSuperheroes = gmynd.addPropSegment(superheroes, "Height", 2)');
+  let superheroes = [
+    {Name: "Steppenwolf", Height: 183},
+    {Name: "Storm", Height: 180},
+    {Name: "Sunspot", Height: 173},
+    {Name: "Superboy", Height: 170},
+    {Name: "Superboy-Prime", Height: 180},
+    {Name: "Supergirl", Height: 165},
+    {Name: "Superman", Height: 191},
+    {Name: "Galactus", Height: 876}
+  ];
+  let segmentedSuperheroes = gmynd.addPropSegment(superheroes, "Height", 3, null, 200);
+  console.log(segmentedSuperheroes);
 
 
   //gmynd.saveData(characters);
