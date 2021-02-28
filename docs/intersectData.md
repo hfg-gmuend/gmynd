@@ -13,7 +13,7 @@ intersection of objects in both original arrays.
 ### Example
 
 Let's say you have the following data with country names and codes, but there are, for example, entries for "World"
-and "Bavaria", which are not considered as souvereign nations by the UN.
+and "Bavaria", which are not considered as sovereign nations by the UN.
 
 ```javascript
 let countryData = [
@@ -26,11 +26,11 @@ let countryData = [
 ]
 ```
 
-So, you need a dataset which contains only the official UN nations and, in this case, their respective Codes (they don't
-have to be in the same order):
+So, you need a dataset which contains only the sovereign UN nations and, in this case, their respective Codes (they
+don't have to be in the same order):
 
 ```javascript
-let souvereignStates = [
+let sovereignNations = [
   {"Country": "Australia", "ISO-ALPHA-3": "AUS"},
   {"Country": "Aruba", "ISO-ALPHA-3": "ABW"},
   {"Country": "Armenia", "ISO-ALPHA-3": "ARM"},
@@ -39,10 +39,10 @@ let souvereignStates = [
 ```
 
 Now you can filter your dataset. This only keeps countries in `countryData`, whose `"Code"` value is found
-as `"ISO-ALPHA-3"` value in any object of `souvereignStates`:
+as `"ISO-ALPHA-3"` value in any object of `sovereignNations`:
 
 ```javascript
-let filteredData = gmynd.intersectData(countryData, souvereignStates, "Code", "ISO-ALPHA-3");
+let filteredData = gmynd.intersectData(countryData, officialNations, "Code", "ISO-ALPHA-3");
 ```
 
 This will be the result:

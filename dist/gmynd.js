@@ -290,11 +290,11 @@ window.gmynd = (function () {
       return newData;
     },
 
-    addPropPercentage: function (data, prop, keyName = prop + "Percentage") {
+    addPropPercentage: function (data, prop, propName = prop + "Percentage") {
       let newData = [...data];
       const sum = this.dataSum(newData, prop);
       newData.forEach(obj => {
-        obj[keyName] = obj[prop] / sum;
+        obj[propName] = obj[prop] / sum;
       });
       return newData;
     },
