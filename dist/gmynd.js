@@ -1,4 +1,4 @@
-window.gmynd = (function() {
+window.gmynd = (function () {
 
   return {
 
@@ -8,7 +8,7 @@ window.gmynd = (function() {
     // Data is always a JSON representation of a table, which is an array
     // of objects like [{Gender:'F', Age:32}, {Gender:'M', Age:73}, ...]
 
-    groupData: function(data, props) {
+    groupData: function (data, props) {
       if (!this.isArray(props)) props = [props];
       let result = {};
       // group on the first key from the given array
@@ -47,7 +47,7 @@ window.gmynd = (function() {
       return result;
     },
 
-    cumulateData: function(data, props, calculations = []) {
+    cumulateData: function (data, props, calculations = []) {
       if (!this.isArray(props)) props = [props];
 
       let groupedData = {};
@@ -124,7 +124,7 @@ window.gmynd = (function() {
       }
     },
 
-    mergeData: function(data1, data2, props1, props2 = props1) {
+    mergeData: function (data1, data2, props1, props2 = props1) {
       if (!this.isArray(props1)) props1 = [props1];
       if (!this.isArray(props2)) props2 = [props2];
       if (props1.length != props2.length) {
@@ -164,14 +164,14 @@ window.gmynd = (function() {
         }
       });
 
-      if (notFoundData.length > 0 ) {
+      if (notFoundData.length > 0) {
         console.warn("Could not find matches for these entries:")
         console.warn(notFoundData);
       }
       return mergedData;
     },
 
-    intersectData: function(baseData, filterData, prop1, prop2 = prop1) {
+    intersectData: function (baseData, filterData, prop1, prop2 = prop1) {
       // returns a filtered version of baseData where only elements are kept that are found in filterData
       let newData = [];
       baseData.forEach((baseElement, i) => {
@@ -186,7 +186,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    deleteIncompleteData: function(data, props) {
+    deleteIncompleteData: function (data, props) {
       if (!this.isArray(props)) props = [props];
 
       let filteredData = [];
@@ -204,7 +204,7 @@ window.gmynd = (function() {
       return filteredData;
     },
 
-    deleteDuplicateData: function(data, prop, keepFirst = true) {
+    deleteDuplicateData: function (data, prop, keepFirst = true) {
       let newData = [];
       data.forEach(el => {
         let isNew = true;
@@ -219,7 +219,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    deleteDataWithWrongPropType: function(data, prop, allowedType) {
+    deleteDataWithWrongPropType: function (data, prop, allowedType) {
       // other name suggestion: filterPropType()
       // possible Inputs: "Boolean", "Integer", "Number", "String", "Array", "Object"
       let newData = [...data];
@@ -256,7 +256,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    convertPropToNumber: function(data, prop, nullNaNs = true) {
+    convertPropToNumber: function (data, prop, nullNaNs = true) {
       let newData = [...data];
       newData.forEach(obj => {
         let val = obj[prop];
@@ -274,11 +274,11 @@ window.gmynd = (function() {
       return newData;
     },
 
-    convertPropToBoolean: function(data, prop, strictMode = false) {
+    convertPropToBoolean: function (data, prop, strictMode = false) {
       let newData = [...data];
       const trueStrings = ["1", "true", "yes", "+", "wahr", "ja"];
       newData.forEach(obj => {
-        let val = obj[prop];
+        let val = obj.hasOwnProperty(prop) ? obj[prop] : false;
         let bool;
         if (val === true) bool = true;
         else {
@@ -291,7 +291,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    addPropPercentage: function(data, prop, keyName = prop + "Percentage") {
+    addPropPercentage: function (data, prop, keyName = prop + "Percentage") {
       let newData = [...data];
       const sum = this.dataSum(newData, prop);
       newData.forEach(obj => {
@@ -300,7 +300,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    addPropSegment: function(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) {
+    addPropSegment: function (data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) {
       let newData = [...data];
       const range = {
         start: start ? start : this.dataMin(data, prop),
@@ -314,7 +314,7 @@ window.gmynd = (function() {
       return newData;
     },
 
-    addPropRank: function(data, prop, keyName = prop + "Rank") {
+    addPropRank: function (data, prop, keyName = prop + "Rank") {
       let newData = [...data];
       this.sortData(newData, prop);
       let i = 0;
@@ -327,41 +327,41 @@ window.gmynd = (function() {
       return newData;
     },
 
-    findAllByValue: function(data, prop, val) {
+    findAllByValue: function (data, prop, val) {
       return data.filter(obj => {
         return obj[prop] === val;
       });
     },
 
-    findFirstByValue: function(data, prop, val) {
+    findFirstByValue: function (data, prop, val) {
       let arr = this.findAllByValue(data, prop, val);
       return arr.length > 0 ? arr[0] : null;
     },
 
-    dataMax: function(data, prop) {
-      return Math.max.apply(Math, data.map(function(obj) {
+    dataMax: function (data, prop) {
+      return Math.max.apply(Math, data.map(function (obj) {
         return obj[prop] ? obj[prop] : -Infinity;
       }));
     },
 
-    dataMin: function(data, prop) {
-      return Math.min.apply(Math, data.map(function(obj) {
+    dataMin: function (data, prop) {
+      return Math.min.apply(Math, data.map(function (obj) {
         return obj[prop] ? obj[prop] : Infinity;
       }))
     },
 
-    dataSum: function(data, prop) {
+    dataSum: function (data, prop) {
       return data.reduce((a, b) => a + (b[prop] || 0), 0);
     },
 
-    dataExtremes: function(data, prop) {
+    dataExtremes: function (data, prop) {
       return {
         "min": this.dataMin(data, prop),
         "max": this.dataMax(data, prop)
       };
     },
 
-    arrayFromProps: function(obj, props, fallbackVal = null) {
+    arrayFromProps: function (obj, props, fallbackVal = null) {
       // puts the values of all given properties of an object into an array and returns that array.
       // useful e.g. when data over time is given like the yearly gdp of a country.
       let propArr = [];
@@ -372,7 +372,7 @@ window.gmynd = (function() {
       return propArr;
     },
 
-    arrayFromPropsInData: function(data, props, propName, deleteProps = true, fallbackVal = null) {
+    arrayFromPropsInData: function (data, props, propName, deleteProps = true, fallbackVal = null) {
       // does arrayFromProps() for every object inside a given JSON. returns the JSON.
       data.forEach(el => {
         el[propName] = this.arrayFromProps(el, props, fallbackVal);
@@ -381,14 +381,14 @@ window.gmynd = (function() {
       return data;
     },
 
-    deleteProps: function(obj, props) {
+    deleteProps: function (obj, props) {
       if (!this.isArray(props)) props = [props];
       props.forEach(prop => {
         if (obj.hasOwnProperty(prop)) delete obj[prop];
       });
     },
 
-    deletePropsInData: function(data, props) {
+    deletePropsInData: function (data, props) {
       if (!this.isArray(props)) props = [props];
       data.forEach(el => {
         props.forEach(prop => {
@@ -397,7 +397,7 @@ window.gmynd = (function() {
       });
     },
 
-    sortData: function(data, props) {
+    sortData: function (data, props) {
       // Variation from https://stackoverflow.com/a/4760279
       if (!this.isArray(props)) props = [props];
       return data.sort((a, b) => {
@@ -451,7 +451,7 @@ window.gmynd = (function() {
     //   };
     // },
 
-    download: function(blob, filename) {
+    download: function (blob, filename) {
       if (window.navigator.msSaveOrOpenBlob) {
         // IE10+
         window.navigator.msSaveOrOpenBlob(blob, filename);
@@ -462,40 +462,40 @@ window.gmynd = (function() {
         a.download = filename;
         document.body.appendChild(a);
         a.click();
-        setTimeout(function() {
+        setTimeout(function () {
           document.body.removeChild(a);
           window.URL.revokeObjectURL(url);
         }, 0);
       }
     },
 
-    saveData: function(data, pretty = true) {
+    saveData: function (data, pretty = true) {
       let c = JSON.stringify(data);
       if (pretty) c = c.replaceAll('}', '\n}');
       if (pretty) c = c.replaceAll('{', '{\n\t');
       if (pretty) c = c.replaceAll(',"', ',\n\t"');
-      const file = new Blob([c], { type: 'text/json' });
+      const file = new Blob([c], {type: 'text/json'});
       this.download(file, "export.json");
     },
 
     // Array-related:
     // ===================================
 
-    arraySum: function(arr) {
+    arraySum: function (arr) {
       return arr.reduce((pv, cv) => Number(pv) + Number(cv), 0);
     },
 
-    arrayCount: function(arr, val) {
+    arrayCount: function (arr, val) {
       return arr.filter(item => item === val).length;
     },
 
-    arrayAverage: function(arr, ignoreEmpty = false) {
+    arrayAverage: function (arr, ignoreEmpty = false) {
       let a = [...arr];
       if (ignoreEmpty) a = a.filter(el => el !== null && el !== undefined && el !== "" && !isNaN(Number(el)));
       return this.arraySum(a) / a.length;
     },
 
-    arrayLast: function(arr, noEmptyValues = false) {
+    arrayLast: function (arr, noEmptyValues = false) {
       let lastVal = null;
       if (noEmptyValues) {
         let i;
@@ -506,7 +506,7 @@ window.gmynd = (function() {
       return lastVal;
     },
 
-    shuffleArray: function(arr) {
+    shuffleArray: function (arr) {
       let currentIndex = arr.length,
         temporaryValue, randomIndex;
 
@@ -520,7 +520,7 @@ window.gmynd = (function() {
       return arr;
     },
 
-    isArray: function(val) {
+    isArray: function (val) {
       // This way of recognizing an Array seems to be the fastest:
       return Object.prototype.toString.call(val) === '[object Array]';
 
@@ -532,26 +532,26 @@ window.gmynd = (function() {
     // General helper functions
     // ========================
 
-    isString: function(val) {
+    isString: function (val) {
       return typeof val === 'string';
     },
 
-    isObject: function(val) {
+    isObject: function (val) {
       return typeof val === 'object' && val !== null;
     },
 
-    clip: function(val, min, max) {
+    clip: function (val, min, max) {
       val = val < min ? min : val;
       val = val > max ? max : val;
       return val;
     },
 
-    map: function(val, low1, high1, low2, high2, clipping = false) {
+    map: function (val, low1, high1, low2, high2, clipping = false) {
       if (clipping) val = this.clip(val, low1, high1);
       return (val - low1) / (high1 - low1) * (high2 - low2) + low2;
     },
 
-    random: function(low, high) {
+    random: function (low, high) {
       if (arguments.length === 0) {
         low = 0;
         high = 1;
@@ -562,7 +562,7 @@ window.gmynd = (function() {
       return Math.random() * (high - low) + low;
     },
 
-    randomInt: function(low, high) {
+    randomInt: function (low, high) {
       if (arguments.length === 0) {
         low = 0;
         high = 1;
@@ -573,38 +573,38 @@ window.gmynd = (function() {
       return Math.floor(this.random(low, high + 1));
     },
 
-    circleRadius: function(area) {
+    circleRadius: function (area) {
       return Math.sqrt(area / Math.PI);
     },
 
-    circleArea: function(r) {
+    circleArea: function (r) {
       return Math.PI * r * r;
     },
 
-    radians: function(deg) {
+    radians: function (deg) {
       return deg / 180 * Math.PI;
     },
 
-    degrees: function(rad) {
+    degrees: function (rad) {
       return rad / Math.PI * 180;
     },
 
-    lerp: function(val1, val2, time) {
+    lerp: function (val1, val2, time) {
       return val1 + time * (val2 - val1);
     },
 
-    distance: function(x1, y1, x2, y2) {
+    distance: function (x1, y1, x2, y2) {
       return Math.sqrt((x2 -= x1) * x2 + (y2 -= y1) * y2);
     },
 
-    cartesian: function(radius, angle) {
+    cartesian: function (radius, angle) {
       return {
         x: radius * Math.cos(angle),
         y: radius * Math.sin(angle)
       };
     },
 
-    polar: function(x, y) {
+    polar: function (x, y) {
       return {
         radius: Math.sqrt(x * x + y * y),
         angle: Math.atan2(y, x)
@@ -614,7 +614,7 @@ window.gmynd = (function() {
     // DATE FUNCTIONS
     // ==============
 
-    duration: function(date1, date2) {
+    duration: function (date1, date2) {
       return Date.parse(date2) - Date.parse(date1);
     },
 
