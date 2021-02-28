@@ -487,12 +487,10 @@ window.gmynd = (function() {
     // ===================================
 
     arraySum: function(arr) {
-      //taken from https://stackoverflow.com/a/3762623
       return arr.reduce((pv, cv) => Number(pv) + Number(cv), 0);
     },
 
     arrayCount: function(array, val) {
-      // how often does given value in given array exist?
       return array.filter(item => item === val).length;
     },
 

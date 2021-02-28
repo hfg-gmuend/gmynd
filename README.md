@@ -58,16 +58,16 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`dataMin(data, prop) -> number`](docs/dataMin.md)
 - [`dataMax(data, prop) -> number`](docs/dataMax.md)
 - [`dataExtremes(data, prop) -> object`](docs/dataExtremes.md)
-- `dataSum(data, prop) -> number`
+- [`dataSum(data, prop) -> number`](docs/dataSum.md)
 - `saveData(data, pretty = true)`
 
 
 #### Array helpers
 
 - [`arraySum(arr) -> number`](docs/arraySum.md)
-- [`arrayCount(array, val) -> number`](docs/arrayCount.md)
+- [`arrayCount(arr, val) -> number`](docs/arrayCount.md)
 - `arrayAverage(arr, ignoreEmpty = false) -> number`
-- `arrayLast(arr, noEmptyValues = false) -> someValue`
+- `arrayLast(arr, ignoreEmpty = false) -> someValue`
 - `shuffleArray(arr)`
 
 

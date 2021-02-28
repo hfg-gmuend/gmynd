@@ -13,3 +13,5 @@ let sum = gmynd.arraySum(randomNumbers);
 
 // sum: 11.3
 ```
+
+Credits to [ChaosPandion](https://stackoverflow.com/a/3762623)

@@ -1,8 +1,8 @@
 [Back to reference](../README.md)
 
-### `arrayCount(array, val)`
+### `arrayCount(arr, val)`
 
-Counts how often `val` is contained in `array`.
+Counts how often `val` is contained in `arr`.
 
 #### Example 1:
 
