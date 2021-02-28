@@ -512,7 +512,6 @@ window.gmynd = (function() {
     },
 
     shuffleArray: function(arr) {
-      // taken from https://stackoverflow.com/a/2450976
       let currentIndex = arr.length,
         temporaryValue, randomIndex;
 
