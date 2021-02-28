@@ -490,13 +490,14 @@ window.gmynd = (function() {
       return arr.reduce((pv, cv) => Number(pv) + Number(cv), 0);
     },
 
-    arrayCount: function(array, val) {
-      return array.filter(item => item === val).length;
+    arrayCount: function(arr, val) {
+      return arr.filter(item => item === val).length;
     },
 
     arrayAverage: function(arr, ignoreEmpty = false) {
-      if (ignoreEmpty) arr = arr.filter(el => el !== null && el !== undefined && el !== "");
-      return this.arraySum(arr) / arr.length;
+      let a = [...arr];
+      if (ignoreEmpty) a = a.filter(el => el !== null && el !== undefined && el !== "" && !isNaN(Number(el)));
+      return this.arraySum(a) / a.length;
     },
 
     arrayLast: function(arr, noEmptyValues = false) {
