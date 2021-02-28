@@ -40,7 +40,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`groupData(data, props) -> newObject`](docs/groupData.md)
 - [`cumulateData(data, props, calculations = []) -> newData`](docs/cumulateData.md)
 - [`mergeData(data1, data2, prop1, prop2 = prop1) -> newData`](docs/mergeData.md)
-- `intersectData(baseData, filterData, prop1, prop2 = prop1) -> newData`
+- [`intersectData(baseData, filterData, prop1, prop2 = prop1) -> newData`](docs/intersectData.md)
 - [`findAllByValue(data, prop, val) -> newData`](docs/findAllByValue.md)
 - [`findFirstByValue(data, prop, val) -> object`](docs/findFirstByValue.md)
 - [`deleteIncompleteData(data, props) -> newData`](docs/deleteIncompleteData.md)

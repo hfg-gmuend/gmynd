@@ -5,7 +5,7 @@ window.gmynd = (function () {
     // JSON / Object manipulation related:
     // ===================================
 
-    // Data is always a JSON representation of a table, which is an array
+    // "data" is always a JSON representation of a table, which is an array
     // of objects like [{Gender:'F', Age:32}, {Gender:'M', Age:73}, ...]
 
     groupData: function (data, props) {
@@ -39,7 +39,7 @@ window.gmynd = (function () {
         // group every entry on the next key
         let groups = Object.entries(result);
         for (let i = 0; i < groups.length; i++) {
-          res = this.groupData(groups[i][1], [...props]);
+          let res = this.groupData(groups[i][1], [...props]);
           result[groups[i][0]] = res;
         }
       }
@@ -127,7 +127,7 @@ window.gmynd = (function () {
     mergeData: function (data1, data2, props1, props2 = props1) {
       if (!this.isArray(props1)) props1 = [props1];
       if (!this.isArray(props2)) props2 = [props2];
-      if (props1.length != props2.length) {
+      if (props1.length !== props2.length) {
         console.error('The third and the fourth argument have to be arrays of the same length!');
         return false;
       }
@@ -172,7 +172,6 @@ window.gmynd = (function () {
     },
 
     intersectData: function (baseData, filterData, prop1, prop2 = prop1) {
-      // returns a filtered version of baseData where only elements are kept that are found in filterData
       let newData = [];
       baseData.forEach((baseElement, i) => {
         let takeElement = false;
@@ -371,7 +370,6 @@ window.gmynd = (function () {
     },
 
     arrayFromPropsInData: function (data, props, propName, deleteProps = true, fallbackVal = null) {
-      // does arrayFromProps() for every object inside a given JSON. returns the JSON.
       data.forEach(el => {
         el[propName] = this.arrayFromProps(el, props, fallbackVal);
         if (deleteProps) this.deleteProps(el, props);
