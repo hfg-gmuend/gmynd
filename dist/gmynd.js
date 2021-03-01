@@ -465,13 +465,13 @@ window.gmynd = (function () {
       }
     },
 
-    saveData: function (data, pretty = true) {
+    saveData: function (data, filename = 'export.json', pretty = true) {
       let c = JSON.stringify(data);
       if (pretty) c = c.replaceAll('}', '\n}');
       if (pretty) c = c.replaceAll('{', '{\n\t');
       if (pretty) c = c.replaceAll(',"', ',\n\t"');
       const file = new Blob([c], {type: 'text/json'});
-      this.download(file, "export.json");
+      this.download(file, filename);
     },
 
     // Array-related:
