@@ -319,7 +319,11 @@ window.gmynd = (function () {
       let i = 0;
       newData.forEach(obj => {
         if (obj.hasOwnProperty(prop)) {
-          obj[keyName] = i;
+          if (i > 0 && obj[prop] == newData[i-1][prop]) {
+            obj[keyName] = newData[i-1][keyName];            
+          } else {
+            obj[keyName] = i;
+          }
           i++;
         }
       });

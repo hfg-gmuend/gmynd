@@ -49,8 +49,8 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`convertPropToNumber(data, prop, nullNaNs = true) -> newData`](docs/convertPropToNumber.md)
 - [`convertPropToBoolean(data, prop, strictMode = false) -> newData`](docs/convertPropToBoolean.md)
 - [`addPropPercentage(data, prop, keyName = prop + "Percentage") -> newData`](docs/addPropPercentage.md)
-- [`addPropSegment(data, prop, segmentCount, keyName = prop + "SegmentOf" + segmentCount, start = null, end = null) -> newData`](docs/addPropSegment.md)
-- `addPropRank(data, prop, keyName = prop + "Rank") -> newData`
+- [`addPropSegment(data, prop, segmentCount, start = null, end = null, propName = prop + "SegmentOf" + segmentCount) -> newData`](docs/addPropSegment.md)
+- [`addPropRank(data, prop, keyName = prop + "Rank") -> newData`](docs/addPropRank.md)
 - [`arrayFromProps(obj, props, fallbackVal = null) -> array`](docs/arrayFromProps.md)
 - [`arrayFromPropsInData(arr, props, propName, deleteProps = true, fallbackVal = null) -> newData`](docs/arrayFromPropsInData.md)
 - [`deleteProps(obj, props)`](docs/deleteProps.md)

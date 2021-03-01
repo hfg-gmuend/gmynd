@@ -132,6 +132,21 @@
   let segmentedSuperheroes = gmynd.addPropSegment(superheroes, "Height", 3, null, 200);
   console.log(segmentedSuperheroes);
 
+  console.log("--------------------------------------");
+  console.log('let rankedSuperheroes = gmynd.addPropRank(superheroes, "Height")');
+  superheroes = [
+    {Name: "Bizarro", Height: 191},
+    {Name: "Storm", Height: 180},
+    {Name: "Sunspot", Height: 173},
+    {Name: "Superboy", Height: 170},
+    {Name: "Superboy-Prime", Height: 180},
+    {Name: "Supergirl", Height: 165},
+    {Name: "Superman", Height: 191},
+    {Name: "Vision", Height: 191},
+  ];
+  let rankedSuperheroes = gmynd.addPropRank(superheroes, "Height");
+  console.log(rankedSuperheroes);
+
 
   //gmynd.saveData(characters);
 
