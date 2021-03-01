@@ -59,7 +59,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`dataMax(data, prop) -> number`](docs/dataMax.md)
 - [`dataExtremes(data, prop) -> object`](docs/dataExtremes.md)
 - [`dataSum(data, prop) -> number`](docs/dataSum.md)
-- `saveData(data, pretty = true)`
+- [`saveData(data, filename = 'export.json', pretty = true)`](docs/saveData.md)
 
 
 #### Array helpers

@@ -1,6 +1,6 @@
 [Back to reference](../README.md)
 
-### `saveData (data, filename = 'export.json', pretty = true)`
+### `saveData(data, filename = 'export.json', pretty = true)`
 
 Saves the given `data` as a json file to the downlaods folder of the browser. The default file name is `export.json` but you can give another name as the second argument. `pretty` set to false will save a file without line breaks which makes it a bit smaller but also less legible.
 
