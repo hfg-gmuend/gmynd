@@ -1,6 +1,6 @@
 [Back to reference](../README.md)
 
-### `addPropSegment(data, prop, segmentCount, propName = prop + "SegmentOf" + segmentCount, start = null, end = null)`
+### `addPropSegment(data, prop, segmentCount, start = null, end = null, propName = prop + "SegmentOf" + segmentCount)`
 
 Separates the range of numeric values of a given property `prop` of `data` objects into a given count of range
 segments (`segmentCount`). Each object in `data` is assigned to one of these segments. The number of that segment is
