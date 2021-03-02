@@ -37,58 +37,58 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 #### Data manipulation
 
 - [`sortData(data, props)`](docs/sortData.md)
-- [`groupData(data, props) -> newObject`](docs/groupData.md)
-- [`cumulateData(data, props, calculations=[]) -> newData`](docs/cumulateData.md)
-- [`mergeData(data1, data2, prop1, prop2=prop1) -> newData`](docs/mergeData.md)
-- [`intersectData(baseData, filterData, prop1, prop2=prop1) -> newData`](docs/intersectData.md)
-- [`findAllByValue(data, prop, val) -> newData`](docs/findAllByValue.md)
-- [`findFirstByValue(data, prop, val) -> object`](docs/findFirstByValue.md)
-- [`deleteIncompleteData(data, props) -> newData`](docs/deleteIncompleteData.md)
-- [`deleteDuplicateData(data, prop, keepFirst=true) -> newData`](docs/deleteDuplicateData.md)
-- [`deleteDataWithWrongPropType(data, prop, allowedType) -> newData`](docs/deleteDataWithWrongPropType.md)
-- [`convertPropToNumber(data, prop, nullNaNs=true) -> newData`](docs/convertPropToNumber.md)
-- [`convertPropToBoolean(data, prop, strictMode=false) -> newData`](docs/convertPropToBoolean.md)
-- [`addPropPercentage(data, prop, keyName=prop+"Percentage") -> newData`](docs/addPropPercentage.md)
-- [`addPropSegment(data, prop, segmentCount, start=null, end=null, propName=prop+"SegmentOf"+segmentCount) -> newData`](docs/addPropSegment.md)
-- [`addPropRank(data, prop, keyName=prop+"Rank") -> newData`](docs/addPropRank.md)
-- [`arrayFromProps(obj, props, fallbackVal=null) -> array`](docs/arrayFromProps.md)
-- [`arrayFromPropsInData(arr, props, propName, deleteProps=true, fallbackVal=null) -> newData`](docs/arrayFromPropsInData.md)
+- [`groupData(data, props)`](docs/groupData.md) -> `object`
+- [`cumulateData(data, props, [calculations])`](docs/cumulateData.md) -> `newData`
+- [`mergeData(data1, data2, prop1, [prop2])`](docs/mergeData.md) -> `newData`
+- [`intersectData(baseData, filterData, prop1, [prop2])`](docs/intersectData.md) -> `newData`
+- [`findAllByValue(data, prop, val)`](docs/findAllByValue.md) -> `newData`
+- [`findFirstByValue(data, prop, val)`](docs/findFirstByValue.md) -> `object`
+- [`deleteIncompleteData(data, props)`](docs/deleteIncompleteData.md) -> `newData`
+- [`deleteDuplicateData(data, prop, [keepFirst])`](docs/deleteDuplicateData.md) -> `newData`
+- [`deleteDataWithWrongPropType(data, prop, allowedType)`](docs/deleteDataWithWrongPropType.md) -> `newData`
+- [`convertPropToNumber(data, prop, [nullNaNs])`](docs/convertPropToNumber.md) -> `newData`
+- [`convertPropToBoolean(data, prop, [strictMode])`](docs/convertPropToBoolean.md) -> `newData`
+- [`addPropPercentage(data, prop, [propName])`](docs/addPropPercentage.md) -> `newData`
+- [`addPropSegment(data, prop, segmentCount, [start], [end], [propName])`](docs/addPropSegment.md)  -> `newData`
+- [`addPropRank(data, prop, [propName])`](docs/addPropRank.md) -> `newData`
+- [`arrayFromProps(obj, props, [fallbackVal])`](docs/arrayFromProps.md) -> `array`
+- [`arrayFromPropsInData(arr, props, propName, [deleteProps], [fallbackVal])`](docs/arrayFromPropsInData.md) -> `newData`
 - [`deleteProps(obj, props)`](docs/deleteProps.md)
 - [`deletePropsInData(data, props)`](docs/deletePropsInData.md)
-- [`dataMin(data, prop) -> number`](docs/dataMin.md)
-- [`dataMax(data, prop) -> number`](docs/dataMax.md)
-- [`dataExtremes(data, prop) -> object`](docs/dataExtremes.md)
-- [`dataSum(data, prop) -> number`](docs/dataSum.md)
-- [`saveData(data, filename='export.json', pretty=true)`](docs/saveData.md)
+- [`dataMin(data, prop)`](docs/dataMin.md) -> `number`
+- [`dataMax(data, prop)`](docs/dataMax.md) -> `number`
+- [`dataExtremes(data, prop)`](docs/dataExtremes.md) -> `object`
+- [`dataSum(data, prop)`](docs/dataSum.md) -> `number`
+- [`saveData(data, [filename], [pretty])`](docs/saveData.md)
 
 
 #### Array helpers
 
-- [`arraySum(arr) -> number`](docs/arraySum.md)
-- [`arrayCount(arr, val) -> number`](docs/arrayCount.md)
-- [`arrayAverage(arr, ignoreEmpty=false) -> number`](docs/arrayAverage.md)
-- [`arrayLast(arr, ignoreEmpty=false) -> someValue`](docs/arrayLast.md)
-- [`shuffleArray(arr) -> array`](docs/shuffleArray.md)
+- [`arraySum(arr)`](docs/arraySum.md) -> `number`
+- [`arrayCount(arr, val)`](docs/arrayCount.md) -> `number`
+- [`arrayAverage(arr, [ignoreEmpty])`](docs/arrayAverage.md) -> `number`
+- [`arrayLast(arr, [ignoreEmpty])`](docs/arrayLast.md) -> `someValue`
+- [`shuffleArray(arr)`](docs/shuffleArray.md) -> `array`
 
 
 #### Math and utilities
 
-- [`map(value, low1, high1, low2, high2, clipping=false) -> number`](docs/map.md)
-- [`lerp(value1, value2, t) -> number`](docs/lerp.md)
-- [`clip(value, min, max) -> number`](docs/clip.md)
-- [`random(low, high) -> number`](docs/random.md)
-- [`randomInt(low, high) -> number`](docs/randomInt.md)
-- [`radians(degree) -> number`](docs/radians.md)
-- [`degrees(radians) -> number`](docs/degrees.md)
-- [`distance(x1, y1, x2, y2) -> number`](docs/distance.md)
-- [`cartesian(radius, angle) -> object`](docs/cartesian.md)
-- [`polar(x, y) -> object`](docs/polar.md)
-- [`circleRadius(area) -> number`](docs/circleRadius.md)
-- [`circleArea(radius) -> number`](docs/circleArea.md)
-- [`duration(date1, date2) -> number`](docs/duration.md)
-- [`isString(value) -> boolean`](docs/isString.md)
-- [`isArray(value) -> boolean`](docs/isArray.md)
-- [`isObject(value) -> boolean`](docs/isObject.md)
+- [`map(value, low1, high1, low2, high2, [clipping])`](docs/map.md) -> `number`
+- [`lerp(value1, value2, t)`](docs/lerp.md) -> `number`
+- [`clip(value, min, max)`](docs/clip.md) -> `number`
+- [`random(low, high)`](docs/random.md) -> `number`
+- [`randomInt(low, high)`](docs/randomInt.md) -> `number`
+- [`radians(degree)`](docs/radians.md) -> `number`
+- [`degrees(radians)`](docs/degrees.md) -> `number`
+- [`distance(x1, y1, x2, y2)`](docs/distance.md) -> `number`
+- [`cartesian(radius, angle)`](docs/cartesian.md) -> `object`
+- [`polar(x, y)`](docs/polar.md) -> `object`
+- [`circleRadius(area)`](docs/circleRadius.md) -> `number`
+- [`circleArea(radius)`](docs/circleArea.md) -> `number`
+- [`duration(date1, date2)`](docs/duration.md) -> `number`
+- [`isString(value)`](docs/isString.md) -> `boolean`
+- [`isArray(value)`](docs/isArray.md) -> `boolean`
+- [`isObject(value)`](docs/isObject.md) -> `boolean`
 
 ---------------------------------
 

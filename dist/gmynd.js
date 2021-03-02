@@ -313,16 +313,16 @@ window.gmynd = (function () {
       return newData;
     },
 
-    addPropRank: function (data, prop, keyName = prop + "Rank") {
+    addPropRank: function (data, prop, propName = prop + "Rank") {
       let newData = [...data];
       this.sortData(newData, prop);
       let i = 0;
       newData.forEach(obj => {
         if (obj.hasOwnProperty(prop)) {
-          if (i > 0 && obj[prop] == newData[i-1][prop]) {
-            obj[keyName] = newData[i-1][keyName];            
+          if (i > 0 && obj[prop] === newData[i-1][prop]) {
+            obj[propName] = newData[i-1][propName];
           } else {
-            obj[keyName] = i;
+            obj[propName] = i;
           }
           i++;
         }
