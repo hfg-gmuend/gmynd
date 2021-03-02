@@ -218,7 +218,7 @@ window.gmynd = (function () {
       return newData;
     },
 
-    deleteDataWithWrongPropType: function (data, prop, allowedType) {
+    filterPropType: function (data, prop, allowedType) {
       // other name suggestion: filterPropType()
       allowedType = allowedType.trim().toLocaleLowerCase();
       let newData = [...data];
