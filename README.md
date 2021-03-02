@@ -45,7 +45,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`findFirstByValue(data, prop, val)`](docs/findFirstByValue.md) -> `object`
 - [`deleteIncompleteData(data, props)`](docs/deleteIncompleteData.md) -> `newData`
 - [`deleteDuplicateData(data, prop, [keepFirst])`](docs/deleteDuplicateData.md) -> `newData`
-- [`deleteDataWithWrongPropType(data, prop, allowedType)`](docs/deleteDataWithWrongPropType.md) -> `newData`
+- [`filterPropType(data, prop, allowedType)`](docs/filterPropType.md) -> `newData`
 - [`convertPropToNumber(data, prop, [nullNaNs])`](docs/convertPropToNumber.md) -> `newData`
 - [`convertPropToBoolean(data, prop, [strictMode])`](docs/convertPropToBoolean.md) -> `newData`
 - [`addPropPercentage(data, prop, [propName])`](docs/addPropPercentage.md) -> `newData`

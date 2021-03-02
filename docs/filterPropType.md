@@ -1,6 +1,6 @@
 [Back to reference](../README.md)
 
-### `deleteDataWithWrongPropType(data, prop, allowedType)`
+### `filterPropType(data, prop, allowedType)`
 
 Filters all objects in `data` by checking if the value of a given property `prop` in each element is of the correct data
 type. `allowedType` works with any string from the following list (case-insensitive):
@@ -30,7 +30,7 @@ let superheroes = [
 This finds and returns all elements in `superheroes` whose `Weight` has the data type `number`:
 
 ```javascript
-let filteredHeroes = gmynd.deleteDataWithWrongPropType(superheroes, "Weight", "Number");
+let filteredHeroes = gmynd.filterPropType(superheroes, "Weight", "Number");
 ```
 
 This is the result:
