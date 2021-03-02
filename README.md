@@ -91,6 +91,16 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`isObject(value) -> boolean`](docs/isObject.md)
 
 ---------------------------------
+
+### Acknowledgements
+
+Example data from 
+https://www.kaggle.com/dannielr/marvel-superheroes
+https://ourworldindata.org/age-structure
+https://ourworldindata.org/gender-ratio
+
+---------------------------------
+
 Suggestions? Bugs? File an issue! :)
 
 
