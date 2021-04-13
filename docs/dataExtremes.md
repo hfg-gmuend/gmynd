@@ -1,6 +1,6 @@
 [Back to reference](../README.md)
 
-### `dataMin(data, prop)`
+### `dataExtremes(data, prop)`
 
 Finds the smallest and biggest numeric values of a given property `prop` in all objects in `data` and returns it as an
 object with the properties `min` and `max`.
@@ -31,9 +31,7 @@ This is the result:
 
 ```javascript
 {
-  min: 165, max
-:
-  191
+  min: 165, max: 191
 }
 ```
 
