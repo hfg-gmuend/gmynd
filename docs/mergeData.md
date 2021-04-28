@@ -6,7 +6,9 @@ Combines two data arrays comparing some properties. It goes through all elements
 
 You can give `props1` and `props2` as an array of strings if you want to compare multiple props or just as a string. If the property names for matching are exactly the same, you can omit `props2`.
 
-#### Example1:
+**Note:** `props2` is/are not included in the result.
+
+#### Example 1:
 
 If you have data with country names or codes but no geolocation ...
 ```javascript

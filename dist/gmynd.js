@@ -149,7 +149,7 @@ window.gmynd = (function () {
           // if elements with same value(s) are found, copy properties from second to first.
           if (success) {
             for (let property in secondArrayElement) {
-              if (secondArrayElement.hasOwnProperty(property)) {
+              if (secondArrayElement.hasOwnProperty(property) && !props2.includes(property)) {
                 newEntry[property] = secondArrayElement[property];
               }
             }

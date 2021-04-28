@@ -99,7 +99,7 @@
   console.log(convertedToBoolean);
 
   console.log("--------------------------------------");
-  console.log('typeChecked = gmynd.deleteDataWithWrongPropType(typeVals, "test", "String")');
+  console.log('typeChecked = gmynd.filterPropType(typeVals, "test", "String")');
   const typeVals = [
     {"test": true},
     {"test": 42},
@@ -107,7 +107,7 @@
     {"test": "Hello world"},
     {"test": [1, 2, 3]},
     {"test": {"test": true}}];
-  let typeChecked = gmynd.deleteDataWithWrongPropType(typeVals, "test", "String");
+  let typeChecked = gmynd.filterPropType(typeVals, "test", "String");
   console.log(typeChecked);
 
   console.log("--------------------------------------");
@@ -146,9 +146,23 @@
   ];
   let rankedSuperheroes = gmynd.addPropRank(superheroes, "Height");
   console.log(rankedSuperheroes);
-
-
   //gmynd.saveData(characters);
+
+  console.log("--------------------------------------");
+  console.log('let mergedHeroes = gmynd.mergeData(sh1, sh2, "Name", "Name2")');
+  let sh1 = [
+    {Name: "Bizarro", Height: 191},
+    {Name: "Storm", Height: 180},
+    {Name: "Superman", Height: 191},
+    {Name: "Vision", Height: 191},
+  ];
+  let sh2 = [
+    {Name2: "Bizarro", Height: 191},
+    {Name2: "Storm", Height: 180},
+    {Name2: "Superman", Height: 191},
+    {Name2: "Vision", Height: 191, test:"test"},
+  ];
+  console.log(gmynd.mergeData(sh1, sh2, "Name", "Name2"));
 
 </script>
 
