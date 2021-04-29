@@ -38,9 +38,9 @@ This will be the result:
 ```javascript
 [ 
   ...
-  {"Entity": "Armenia", "Code": "ARM", "Year": 2010, "FemalePerc": 53.2079985875687, "Country": "Australia", "ISO-ALPHA-3": "AUS", "lat": -25.274398, "long": 133.775136},  
-  {"Entity": "Aruba", "Code": "ABW", "Year": 2010, "FemalePerc": 52.3287267004377, "Country": "Aruba", "ISO-ALPHA-3": "ABW", "lat": 12.52111, "long": -69.968338},  
-  {"Entity": "Australia", "Code": "AUS", "Year": 2010, "FemalePerc": 49.9937545380187, "Country": "Armenia", "ISO-ALPHA-3": "ARM", "lat": 40.069099, "long": 45.038189},
+  {"Entity": "Armenia", "Code": "ARM", "Year": 2010, "FemalePerc": 53.2079985875687, "Country": "Australia", "lat": -25.274398, "long": 133.775136},  
+  {"Entity": "Aruba", "Code": "ABW", "Year": 2010, "FemalePerc": 52.3287267004377, "Country": "Aruba", "lat": 12.52111, "long": -69.968338},  
+  {"Entity": "Australia", "Code": "AUS", "Year": 2010, "FemalePerc": 49.9937545380187, "Country": "Armenia", "lat": 40.069099, "long": 45.038189},
   ...
 ]
 ```
