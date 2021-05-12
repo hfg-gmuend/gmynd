@@ -49,6 +49,7 @@ window.gmynd = (function () {
 
     cumulateData: function (data, props, calculations = []) {
       if (!this.isArray(props)) props = [props];
+      if (!this.isArray(calculations)) calculations = [calculations];
 
       let groupedData = {};
 

@@ -4,7 +4,7 @@
 
 Cumulates a data array by the given property names (keys) and calculations. It returns a new array of objects where each combination of the different values for the given props builds one of the entries. If you don't give calculations it will only count the entries matching the same combination of the values (see example 1).
 
-You could do some more stuff with the data by giving the third paramter `calculations` which is an array of objects like the following. Each of them describes one calculation you want to perform with the data. By now these are the possible calculations:
+You could do some more stuff with the data by giving the third parameter `calculations` which is an array of objects (or just a single object) like the following. Each of them describes one calculation you want to perform with the data. By now these are the possible calculations:
 
 ```javascript
 {'value':'Height', 'method':'Sum', 'title':'HSUM'},   
@@ -40,7 +40,7 @@ let superheroes = [
 
 This will cumulate `superheroes` by `Gender` and `Alignment`:
 ```javascript
-let cumulatedSuperheroes = gmynd.cumulateData(res, ["Gender", "Alignment"])
+let cumulatedSuperheroes = gmynd.cumulateData(superheroes, ["Gender", "Alignment"])
 ```
 
 This is the result:
