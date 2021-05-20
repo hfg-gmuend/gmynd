@@ -382,20 +382,24 @@ window.gmynd = (function () {
       return data;
     },
 
-    deleteProps: function (obj, props) {
-      if (!this.isArray(props)) props = [props];
-      props.forEach(prop => {
-        if (obj.hasOwnProperty(prop)) delete obj[prop];
-      });
-    },
-
-    deletePropsInData: function (data, props) {
+    deleteProps: function (data, props) {
+      let isObj = false;
+      if (this.isObject(data)){
+        if(!this.isArray(data) ) {
+        data = [data];
+        isObj = true;
+      }}
+      else {
+        console.warn("Passed data has wrong type (must be array or object).");
+        return data;
+      }
       if (!this.isArray(props)) props = [props];
       data.forEach(el => {
         props.forEach(prop => {
           delete el[prop];
         });
       });
+      return isObj ?  data[0] : data;
     },
 
     sortData: function (data, props) {
@@ -412,45 +416,11 @@ window.gmynd = (function () {
           }
           result = (a[prop] < b[prop]) ? -1 : (a[prop] > b[prop]) ? 1 : 0;
           result *= sortOrder;
-          if (result != 0) break;
+          if (result !== 0) break;
         }
         return result;
       });
     },
-
-    // dynamicSort: function(prop) {
-    //   // taken from https://stackoverflow.com/a/4760279
-    //   // sorts Array of Object by values of a given property (multiple params possible)
-    //   let sortOrder = 1;
-    //   if (prop[0] === "-") {
-    //     sortOrder = -1;
-    //     prop = prop.substr(1);
-    //   }
-    //   return function(a, b) {
-    //     let result = (a[prop] < b[prop]) ? -1 : (a[prop] > b[prop]) ? 1 : 0;
-    //     return result * sortOrder;
-    //   }
-    // },
-
-    // sortJSON: function(arr, props) {
-    //   // makes dynamicSort and dynamicSortMultiple easier to use (thus decreasing performance):
-    //   if (!this.isArray(props)) props = [props];
-    //   return arr.sort(this.dynamicSortMultiple(...props));
-    // },
-
-    // dynamicSortMultiple: function() {
-    //   let props = arguments;
-    //   return function(obj1, obj2) {
-    //     let i = 0,
-    //       result = 0,
-    //       numberOfProperties = props.length;
-    //     while (result === 0 && i < numberOfProperties) {
-    //       result = utils.dynamicSort(props[i])(obj1, obj2);
-    //       i++;
-    //     }
-    //     return result;
-    //   };
-    // },
 
     download: function (blob, filename) {
       if (window.navigator.msSaveOrOpenBlob) {
