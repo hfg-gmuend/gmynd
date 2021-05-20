@@ -160,13 +160,18 @@
     {Name2: "Bizarro", Height: 191},
     {Name2: "Storm", Height: 180},
     {Name2: "Superman", Height: 191},
-    {Name2: "Vision", Height: 191, test:"test"},
+    {Name2: "Vision", Height: 191, test: "test"},
   ];
   console.log(gmynd.mergeData(sh1, sh2, "Name", "Name2"));
 
   console.log("--------------------------------------");
   console.log("deleteProps()");
   console.log(gmynd.deleteProps(superheroes, ["Weight", "Height"]));
+
+  console.log("--------------------------------------");
+  console.log("renameProps()");
+  console.log(gmynd.renameProps(superheroes, ["Name", "HeightRank"], ["name", "heightRank"]));
+  //console.log(gmynd.renameProps(superheroes[0], ["Name", "HeightRank"], ["name", "heightRank"]));
 
 </script>
 

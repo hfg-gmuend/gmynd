@@ -320,8 +320,8 @@ window.gmynd = (function () {
       let i = 0;
       newData.forEach(obj => {
         if (obj.hasOwnProperty(prop)) {
-          if (i > 0 && obj[prop] === newData[i-1][prop]) {
-            obj[propName] = newData[i-1][propName];
+          if (i > 0 && obj[prop] === newData[i - 1][prop]) {
+            obj[propName] = newData[i - 1][propName];
           } else {
             obj[propName] = i;
           }
@@ -384,12 +384,12 @@ window.gmynd = (function () {
 
     deleteProps: function (data, props) {
       let isObj = false;
-      if (this.isObject(data)){
-        if(!this.isArray(data) ) {
-        data = [data];
-        isObj = true;
-      }}
-      else {
+      if (this.isObject(data)) {
+        if (!this.isArray(data)) {
+          data = [data];
+          isObj = true;
+        }
+      } else {
         console.warn("Passed data has wrong type (must be array or object).");
         return data;
       }
@@ -399,7 +399,37 @@ window.gmynd = (function () {
           delete el[prop];
         });
       });
-      return isObj ?  data[0] : data;
+      return isObj ? data[0] : data;
+    },
+
+    renameProps: function (data, props, names) {
+      // duplicate code fragments are intended as the library can be used as snippet collection where only some functions are taken.
+      let isObj = false;
+      if (this.isObject(data)) {
+        if (!this.isArray(data)) {
+          data = [data];
+          isObj = true;
+        }
+      } else {
+        console.warn("Passed data has wrong type (must be array or object).");
+        return data;
+      }
+      if (!this.isArray(props)) props = [props];
+      if (!this.isArray(names)) props = [names];
+      if (props.length === names.length) {
+        data.forEach(el => {
+          props.forEach((prop, i) => {
+            if (el.hasOwnProperty(prop)) {
+              el[names[i]] = el[prop];
+              delete el[prop];
+            }
+          });
+        });
+        return isObj ? data[0] : data;
+      } else {
+        console.warn(`Expecting same length of props and names [got ${props.length} prop(s) and ${names.length} name(s)].`);
+        return isObj ? data[0] : data;
+      }
     },
 
     sortData: function (data, props) {
@@ -588,7 +618,5 @@ window.gmynd = (function () {
     duration: function (date1, date2) {
       return Date.parse(date2) - Date.parse(date1);
     },
-
   }
-
 })()
