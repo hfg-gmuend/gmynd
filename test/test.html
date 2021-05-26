@@ -110,6 +110,7 @@
   let typeChecked = gmynd.filterPropType(typeVals, "test", "String");
   console.log(typeChecked);
 
+
   console.log("--------------------------------------");
   console.log('duration = gmynd.duration(start, end)');
   const start = new Date(1939, 8, 1);
@@ -172,6 +173,18 @@
   console.log("renameProps()");
   console.log(gmynd.renameProps(superheroes, ["Name", "HeightRank"], ["name", "heightRank"]));
   //console.log(gmynd.renameProps(superheroes[0], ["Name", "HeightRank"], ["name", "heightRank"]));
+
+
+  console.log("--------------------------------------");
+  console.log("deleteIncompleteData()");
+  let heroes = [
+    {Name: "Bizarro", Height: 191},
+    {Name: "Storm", Height: 180},
+    {Name: "Superman", Height: 191},
+    {Name: "Vision", Height: 191}
+  ];
+  console.log(gmynd.deleteIncompleteData(heroes, "Height", [180]));
+
 
 </script>
 

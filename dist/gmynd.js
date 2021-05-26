@@ -186,9 +186,10 @@ window.gmynd = (function () {
       return newData;
     },
 
-    deleteIncompleteData: function (data, props) {
+    deleteIncompleteData: function (data, props, emptyValues=[]) {
       if (!this.isArray(props)) props = [props];
-
+      if (!this.isArray(emptyValues)) emptyValues = [emptyValues];
+      let blacklist = [undefined, null, ""].concat(emptyValues);
       let filteredData = [];
       data.forEach(obj => {
         let propMissing = false;
@@ -196,7 +197,7 @@ window.gmynd = (function () {
           if (!obj.hasOwnProperty(prop)) {
             propMissing = true;
           } else {
-            if (obj[prop] === undefined || obj[prop] === null || obj[prop] === "") propMissing = true;
+            if (blacklist.includes(obj[prop])) propMissing = true;
           }
         });
         if (!propMissing) filteredData.push(obj);
