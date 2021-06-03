@@ -186,7 +186,7 @@ window.gmynd = (function () {
       return newData;
     },
 
-    deleteIncompleteData: function (data, props, emptyValues=[]) {
+    deleteIncompleteData: function (data, props, emptyValues = []) {
       if (!this.isArray(props)) props = [props];
       if (!this.isArray(emptyValues)) emptyValues = [emptyValues];
       let blacklist = [undefined, null, ""].concat(emptyValues);
@@ -619,5 +619,21 @@ window.gmynd = (function () {
     duration: function (date1, date2) {
       return Date.parse(date2) - Date.parse(date1);
     },
+
+    weekOfYear: function (date, returnYear = false) {
+      // taken from https://stackoverflow.com/a/6117889
+      date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+      date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
+      const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+      const weekNo = Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+      return returnYear ? [date.getUTCFullYear(), weekNo] : weekNo;
+    },
+
+    dayOfYear: function (date) {
+      const firstOfYear = new Date(date.getFullYear(), 0, 0);
+      const diff = this.duration(firstOfYear,date);
+      return Math.floor(diff / (1000 * 60 * 60 * 24));
+    }
+
   }
 })()

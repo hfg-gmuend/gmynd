@@ -43,7 +43,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`intersectData(baseData, filterData, prop1, [prop2])`](docs/intersectData.md) -> `newData`
 - [`findAllByValue(data, prop, val)`](docs/findAllByValue.md) -> `newData`
 - [`findFirstByValue(data, prop, val)`](docs/findFirstByValue.md) -> `object`
-- [`deleteIncompleteData(data, props)`](docs/deleteIncompleteData.md) -> `newData`
+- [`deleteIncompleteData(data, props, [emptyValues])`](docs/deleteIncompleteData.md) -> `newData`
 - [`deleteDuplicateData(data, prop, [keepFirst])`](docs/deleteDuplicateData.md) -> `newData`
 - [`filterPropType(data, prop, allowedType)`](docs/filterPropType.md) -> `newData`
 - [`convertPropToNumber(data, prop, [nullNaNs])`](docs/convertPropToNumber.md) -> `newData`
@@ -86,6 +86,8 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`circleRadius(area)`](docs/circleRadius.md) -> `number`
 - [`circleArea(radius)`](docs/circleArea.md) -> `number`
 - [`duration(date1, date2)`](docs/duration.md) -> `number`
+- [`weekOfYear(date, [returnYear])`](docs/weekOfYear.md) -> `number` or `array`
+- [`dayOfYear(date)`](docs/dayOfYear.md) -> `number`
 - [`isString(value)`](docs/isString.md) -> `boolean`
 - [`isArray(value)`](docs/isArray.md) -> `boolean`
 - [`isObject(value)`](docs/isObject.md) -> `boolean`
