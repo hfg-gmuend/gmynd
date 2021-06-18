@@ -47,8 +47,8 @@ This is the result:
   {Name: "Sunspot", Height: 173, HeightSegmentOf3: 0},
   {Name: "Superboy", Height: 170, HeightSegmentOf3: 0},
   {Name: "Superboy-Prime", Height: 180, HeightSegmentOf3: 1},
-  {Name: "Supergirl", Height: 165, HeightSegmentOf2: 0},
-  {Name: "Superman", Height: 191, HeightSegmentOf2: 2}
+  {Name: "Supergirl", Height: 165, HeightSegmentOf3: 0},
+  {Name: "Superman", Height: 191, HeightSegmentOf3: 2}
 ]
 ```
 
@@ -71,8 +71,8 @@ Then the same operation as above would lead to the following result:
 [
   {Name: "Steppenwolf", Height: 183, HeightSegmentOf3: 0},
   // all others also in segment 0
-  {Name: "Superman", Height: 191, HeightSegmentOf2: 0},
-  {Name: "Galactus", Height: 876, HeightSegmentOf2: 2}
+  {Name: "Superman", Height: 191, HeightSegmentOf3: 0},
+  {Name: "Galactus", Height: 876, HeightSegmentOf3: 2}
 ]
 ```
 
@@ -93,8 +93,8 @@ This is the result:
   {Name: "Sunspot", Height: 173, HeightSegmentOf3: 0},
   {Name: "Superboy", Height: 170, HeightSegmentOf3: 0},
   {Name: "Superboy-Prime", Height: 180, HeightSegmentOf3: 1},
-  {Name: "Supergirl", Height: 165, HeightSegmentOf2: 0},
-  {Name: "Superman", Height: 191, HeightSegmentOf2: 2},
-  {Name: "Galactus", Height: 876, HeightSegmentOf2: 2}
+  {Name: "Supergirl", Height: 165, HeightSegmentOf3: 0},
+  {Name: "Superman", Height: 191, HeightSegmentOf3: 2},
+  {Name: "Galactus", Height: 876, HeightSegmentOf3: 2}
 ]
 ```
