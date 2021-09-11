@@ -32,16 +32,8 @@ let supergirl = gmynd.findFirstByValue(superheroes, "Name", "Supergirl");
 This is the result:
 
 ```javascript
-  {
-  Name:"Supergirl", Alignment
-:
-  "good", Gender
-:
-  "Female", Height
-:
-  165, Weight
-:
-  54
+{
+  Name:"Supergirl", Alignment: "good", Gender: "Female", Height: 165, Weight: 54
 }
 ```
 
@@ -56,15 +48,7 @@ let firstGoodHero = gmynd.findFirstByValue(superheroes, "Alignment", "good");
 This is the result:
 
 ```javascript
-  {
-  Name:"Storm", Alignment
-:
-  "good", Gender
-:
-  "Female", Height
-:
-  180, Weight
-:
-  57
+{
+  Name:"Storm", Alignment: "good", Gender: "Female", Height: 180, Weight: 57
 }
 ```
