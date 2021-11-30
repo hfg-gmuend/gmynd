@@ -8,5 +8,5 @@ Calculates the radius of a circle for a given `area`.
 ```javascript
 let radius = gmynd.circleRadius(200);
 ```
-`radius will be 7.978845608028654
+radius will be 7.978845608028654
 
