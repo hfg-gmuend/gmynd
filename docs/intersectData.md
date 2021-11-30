@@ -42,7 +42,7 @@ Now you can filter your dataset. This only keeps countries in `countryData`, who
 as `"ISO-ALPHA-3"` value in any object of `sovereignNations`:
 
 ```javascript
-let filteredData = gmynd.intersectData(countryData, officialNations, "Code", "ISO-ALPHA-3");
+let filteredData = gmynd.intersectData(countryData, sovereignNations, "Code", "ISO-ALPHA-3");
 ```
 
 This will be the result:
