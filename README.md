@@ -91,6 +91,7 @@ We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properti
 - [`isString(value)`](docs/isString.md) -> `boolean`
 - [`isArray(value)`](docs/isArray.md) -> `boolean`
 - [`isObject(value)`](docs/isObject.md) -> `boolean`
+- [`version()`](docs/version.md) -> `string`
 
 ---------------------------------
 

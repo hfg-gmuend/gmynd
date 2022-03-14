@@ -2,6 +2,10 @@ window.gmynd = (function () {
 
   return {
 
+    version: function () {
+      return "1.0.0";
+    },
+
     // JSON / Object manipulation related:
     // ===================================
 
