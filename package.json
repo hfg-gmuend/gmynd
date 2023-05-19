@@ -1,0 +1,25 @@
+{
+  "name": "gmynd",
+  "version": "1.0.0",
+  "description": "utility functions to help visualize JSON data",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hfg-gmuend/gmynd"
+  },
+  "keywords": [
+    "javascript",
+    "utility",
+    "data",
+    "visualization"
+  ],
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Hartmut Bohnacker, Fabian Rauch",
+  "license": "ISC"
+}

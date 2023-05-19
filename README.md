@@ -1,5 +1,9 @@
 # G•M•Y•N•D
 
+```javascript
+npm install gmynd
+```
+
 **A javascript utility library**
 
 This library serves for (students) data visualization projects. It provides some data manipulation functions and other utility functions to make the life of javascript programming a bit easier. It's just a set of convenience functions, not a framework.
