@@ -1,9 +1,9 @@
-window.gmynd = (function () {
+let gmynd = (function () {
 
   return {
 
     version: function () {
-      return "1.0.0";
+      return "1.0.2";
     },
 
     // JSON / Object manipulation related:
@@ -480,7 +480,7 @@ window.gmynd = (function () {
       if (pretty) c = c.replaceAll('}', '\n}');
       if (pretty) c = c.replaceAll('{', '{\n\t');
       if (pretty) c = c.replaceAll(',"', ',\n\t"');
-      const file = new Blob([c], {type: 'text/json'});
+      const file = new Blob([c], { type: 'text/json' });
       this.download(file, filename);
     },
 
@@ -635,9 +635,16 @@ window.gmynd = (function () {
 
     dayOfYear: function (date) {
       const firstOfYear = new Date(date.getFullYear(), 0, 0);
-      const diff = this.duration(firstOfYear,date);
+      const diff = this.duration(firstOfYear, date);
       return Math.floor(diff / (1000 * 60 * 60 * 24));
     }
 
   }
 })()
+
+if (typeof window !== 'undefined') {
+  // if in a browser
+  window.gmynd = gmynd;
+}
+
+module.exports = gmynd;
