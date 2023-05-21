@@ -1,9 +1,5 @@
 # G•M•Y•N•D
 
-```javascript
-npm install gmynd
-```
-
 **A javascript utility library**
 
 This library serves for (students) data visualization projects. It provides some data manipulation functions and other utility functions to make the life of javascript programming a bit easier. It's just a set of convenience functions, not a framework.
@@ -34,8 +30,20 @@ Absorbing Man,193,122
 
 We will refer to the column titles (e.g. `Name`, `Height`, `Weight`) as properties or props and to the rows as data objects or entries.
 
+---------------------------------
+
+### Installation
+Either copy `./src/gmynd.js` to your project folder or install it in any node.js project:
+```javascript
+npm install gmynd
+```
+Load the functions into your node script:
+```javascript
+const gmynd = require("gmynd");
+```
 
 ---------------------------------
+
 ### Reference
 
 #### Data manipulation
