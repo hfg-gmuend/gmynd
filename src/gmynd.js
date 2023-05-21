@@ -647,4 +647,7 @@ if (typeof window !== 'undefined') {
   window.gmynd = gmynd;
 }
 
-module.exports = gmynd;
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  // if in a node project
+  module.exports = gmynd;
+}
