@@ -3,7 +3,7 @@ let gmynd = (function () {
   return {
 
     version: function () {
-      return "1.0.3";
+      return "1.0.4";
     },
 
     // JSON / Object manipulation related:
@@ -616,6 +616,28 @@ let gmynd = (function () {
         angle: Math.atan2(y, x)
       };
     },
+
+    range: function (start, stop, step = 1) {
+      // if stop is not given, range should go from 0 to start
+      if (!stop) {
+        [start, stop] = [0, start];
+      }
+  
+      // From the Python docs:
+      // "If step is zero, ValueError is raised." -> Here, it returns just an empty array.
+      // "For a positive step, the contents of a range r are determined by the formula r[i] = start + step*i where i >= 0 and r[i] < stop."
+      // "For a negative step, the contents of the range are still determined by the formula r[i] = start + step*i, but the constraints are i >= 0 and r[i] > stop."
+      // "A range object will be empty if r[0] does not meet the value constraint."
+      
+      if (step == 0) return [];
+      if (step > 0 && start >= stop) return [];
+      if (step < 0 && start <= stop) return [];
+      
+      const size = Math.ceil((stop - start) / step);
+      if (size > 1000000) return [];
+      return [...Array(size).keys()].map(i => i * step + start);
+    },
+
 
     // DATE FUNCTIONS
     // ==============

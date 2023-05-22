@@ -97,6 +97,7 @@ const gmynd = require("gmynd");
 - [`polar(x, y)`](docs/polar.md) -> `object`
 - [`circleRadius(area)`](docs/circleRadius.md) -> `number`
 - [`circleArea(radius)`](docs/circleArea.md) -> `number`
+- [`range(start, stop, [step])`](docs/range.md) -> `array`
 - [`duration(date1, date2)`](docs/duration.md) -> `number`
 - [`weekOfYear(date, [returnYear])`](docs/weekOfYear.md) -> `number` or `array`
 - [`dayOfYear(date)`](docs/dayOfYear.md) -> `number`
