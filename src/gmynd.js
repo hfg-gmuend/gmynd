@@ -3,7 +3,7 @@ let gmynd = (function () {
   return {
 
     version: function () {
-      return "1.0.4";
+      return "1.0.5";
     },
 
     // JSON / Object manipulation related:
